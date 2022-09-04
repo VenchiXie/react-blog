@@ -14,4 +14,11 @@
   height: 100%;
 }
 
-
+.Home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.5rem;
+}
