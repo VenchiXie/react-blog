@@ -1,5 +1,6 @@
-import React, { Suspense, lazy } from 'react'
+import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AppLoading from '@/components/AppLoading/AppLoading'
 
 const App = lazy(() => import('@/App'))
 const AppHome = lazy(() => import('@/views/Home/AppHome'))
@@ -8,7 +9,7 @@ const Exception404 = lazy(() => import('@/views/Exception/Exception404'))
 
 function AppRouter() {
   return (
-    <Suspense fallback={<div>loading....</div>}>
+    <Suspense fallback={<AppLoading />}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
