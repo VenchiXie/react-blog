@@ -1,0 +1,31 @@
+.AppSide {
+  position: fixed;
+  right: 0;
+  bottom: 6.6%;
+  transform: translateX(100%);
+  transition: 0.3s;
+  user-select: none;
+  z-index: 99;
+}
+
+.AppSide-active {
+  transform: translateX(0%);
+}
+
+.AppSide>div {
+  width: 0.4rem;
+  height: 0.4rem;
+  text-align: center;
+  line-height: 0.4rem;
+  font-weight: 600;
+  font-size: 0.12rem;
+  border-radius: 0.10rem;
+  margin-bottom: 0.05rem;
+  cursor: pointer;
+  background: var(--nav-background);
+}
+
+.AppSide>div:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
