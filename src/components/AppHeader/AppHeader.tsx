@@ -68,7 +68,7 @@ function AppHeader(props:any) {
 
 
   // 监听当时屏幕的宽度, 宽度 > 768px 时允许滚动
-  const currentScreenWidthListener = () => {
+  const currentScreenWidthListener = () => {    
     if (document.documentElement.offsetWidth >= 768) {
       document.body.style.overflowY = 'auto' // 允许滚动
     }
