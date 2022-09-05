@@ -46,6 +46,8 @@ function AppHeader(props:any) {
     if (value == '/') {
       return navigate('/')  // 判断是否是主页
     }
+    console.log(1);
+    
     document.body.style.overflowY = 'auto'          // 允许滚动
     menuRef.current!.classList.toggle('active')     // 关闭菜单
     menuMaskRef.current.classList.toggle('active')  // 关闭菜单遮罩
