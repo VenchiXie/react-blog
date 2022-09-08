@@ -100,6 +100,10 @@
   border: 0.01rem solid;
 }
 
+.App-sub-menu>li a {
+  display: flex;
+}
+
 .App-Logo {
   font-size: 0.3rem;
   font-weight: 500;

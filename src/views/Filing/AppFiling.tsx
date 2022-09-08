@@ -1,13 +1,15 @@
 import AppFooter from '@/components/AppFooter/AppFooter'
 import AppLoading from '@/components/AppLoading/AppLoading'
-import '@/styles/AppAuthor.css'
-function AppAuthor() {
+import '@/styles/AppFiling.css'
+
+/***
+ * 归档页
+ *  */ 
+function AppFiling() {
   return (
-    <section className="Author">
-      <article className="Author-main">
-        <h1>author</h1>
-        <h1>author</h1>
-        <h1>author</h1>
+    <section className="Filing">
+      <article className="Filing-main">
+        <h1>AppFiling page</h1>
         <AppLoading></AppLoading>
       </article>
       <AppFooter></AppFooter>
@@ -15,4 +17,4 @@ function AppAuthor() {
   )
 }
 
-export default AppAuthor
+export default AppFiling

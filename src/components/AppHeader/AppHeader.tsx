@@ -1,39 +1,13 @@
 import { useEffect, useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { debounce } from '@/utils/debounce'
+import navs from '@/utils/navs'
 import './AppHeader.css'
 
-// path: '/app_search',
-// path: '/app_blog',
-// path: '/app_yingyin',
-// path: '/app_author',
-// path: '/app_space',
-const navs = [
-  {
-    key: 2,
-    name: '博客',
-    sub_nav: [{ name: '内容' }, { name: '哔哩' }, { name: '归档' }],
-  },
-  {
-    key: 3,
-    name: '影音',
-    sub_nav: [{ name: '相册' }, { name: '足迹' }, { name: '物品' }],
-  },
-  {
-    key: 4,
-    name: '作者',
-    sub_nav: [
-      { name: '简介', path: '/app-author' },
-      { name: '项目' },
-      { name: '友链' },
-    ],
-  },
-  {
-    key: 5,
-    name: '空间',
-    sub_nav: [{ name: '速查' }, { name: '论坛' }, { name: '服务' }],
-  },
-]
+
+/**
+ * 导航栏
+ *  */
 function AppHeader(props:any) {
   const {  onClickSearch } = props
   const navigate       = useNavigate()
@@ -45,9 +19,7 @@ function AppHeader(props:any) {
   const onNavigate = (value: string) => {
     if (value == '/') {
       return navigate('/')  // 判断是否是主页
-    }
-    console.log(1);
-    
+    }    
     document.body.style.overflowY = 'auto'          // 允许滚动
     menuRef.current!.classList.toggle('active')     // 关闭菜单
     menuMaskRef.current.classList.toggle('active')  // 关闭菜单遮罩
@@ -120,23 +92,48 @@ function AppHeader(props:any) {
  *  */
 const AppSubMenuRender = (props: any) => {
   const { items, subMenuItemRef, onNavigate } = props
-  // 将 ref 统一添加到数组中
+  // 将 ref 统一添加到数组中,当点击菜单项时，则会关闭菜单（移动端）。
   const getSubMenuItem = (value: any) => {
     subMenuItemRef.current.push(value)
   }
   return (
     <ol className="App-sub-menu">
-      {items.sub_nav?.map((item: any) => (
-        <li
-          key={item.name}
-          ref={getSubMenuItem}
-          onClick={() => onNavigate(item.path)}>
-          <span>图</span>
-          <p>{item.name}</p>
-        </li>
-      ))}
+      {items.sub_nav?.map((item: any) => {
+        return item.href ? (
+          <li key={item.name} ref={getSubMenuItem}>
+            <a href={item.href} target="__blank">
+              <span>图</span>
+              <p>{item.name}</p>
+            </a>
+          </li>
+        ) : (
+          <li
+            key={item.name} ref={getSubMenuItem} onClick={() => onNavigate(item.path)}>
+            <span>图</span>
+            <p>{item.name}</p>
+          </li>
+        )
+      })}
     </ol>
   )
 }
+
+/* 
+{items.sub_nav?.map((item: any) => (
+  <li key={item.name} ref={getSubMenuItem} onClick={() => onNavigate(item.path)}>
+    {item.href ? (
+      <a href={item.href} target="__blank">
+        <span>图</span>
+        <p>{item.name}</p>
+      </a>
+    ) : (
+      <>
+        <span>图</span>
+        <p>{item.name}</p>
+      </>
+    )}
+  </li>
+))}
+*/
 
 export default AppHeader
