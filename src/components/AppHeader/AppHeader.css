@@ -7,7 +7,6 @@
   user-select: none;
   transition: top 0.8s;
   box-sizing: border-box;
-  /* background: var(--nav-background); */
   z-index: 999;
 }
 
@@ -22,6 +21,7 @@
   align-items: center;
   height: 0.6rem;
   padding: 0 0.30rem;
+
   box-sizing: border-box;
 }
 

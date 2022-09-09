@@ -87,7 +87,6 @@ body {
   color: var(--text-color);
   font-family: var(--font-family);
   font-size: var(--font-size-16);
-  letter-spacing: 0.01rem;
   background: var(--theme);
   overflow-x: hidden;
 }

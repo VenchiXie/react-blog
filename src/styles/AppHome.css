@@ -14,11 +14,179 @@
   height: 100%;
 }
 
-.Home-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.Home-content{
+  position: fixed;
+  top: 50%;
+  left: 50%;
   font-size: 0.5rem;
+  transform: translate(-50%,-50%);
+}
+
+/*  名称 */
+.Home-name {
+  position: fixed;
+  bottom: 30%;
+  left: 1.5%;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: '华文楷体', '方正舒体';
+}
+
+/* 最新文章 */
+.Home-latest-article {
+  position: fixed;
+  right: 2%;
+  bottom: 19%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 5rem;
+}
+
+.Home-latest-article-ul>li {
+  margin-top: 0.30rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 3.0rem;
+  height: 1.15rem;
+  transition: 1s;
+  border-radius: 0.15rem;
+  background: rgba(138, 141, 140, 0.651);
+  user-select: none;
+
+}
+
+.Home-latest-article-ul>li:nth-of-type(even) {
+  transform: translateX(0.8rem);
+}
+
+.Home-latest-article-ul>li:last-child {
+  transform: translateX(-0.5rem);
+}
+
+.Home-latest-article-ul>li:hover {
+  transform: scale(1.02);
+}
+
+.Home-latest-article-ul>li:hover img {
+  transform: scale(1.2);
+}
+
+.Home-latest-article-content {
+  width: 1.32rem;
+  height: 0.70rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.Home-latest-article-img {
+  width: 1.15rem;
+  height: 0.95rem;
+  border-radius: 0.15rem;
+  overflow: hidden;
+}
+
+.Home-latest-article-img>img {
+  width: inherit;
+  height: inherit;
+  transition: 1s;
+}
+
+
+/* 个人介绍 */
+.Home-introduction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0.2rem;
+  width: 100%;
+  height: 2.5rem;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.Home-introduction-text,
+.Home-introduction-dot {
+  position: relative;
+  padding: 0.1rem 0.3rem;
+}
+
+.Home-introduction-text {
+  overflow: hidden;
+}
+
+.Home-introduction-ul {
+  width: 5.85rem;
+  height: 0.75rem;
+  font-size: 0.25rem;
+  font-weight: 600;
+  font-family: '华文楷体', '方正舒体';
+}
+
+.Home-introduction-ul li {
+  display: none;
+
+}
+
+.Home-introduction-ul li.active {
+  display: block;
+}
+
+.Home-introduction-dot>span {
+  display: block;
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  margin: 0.1rem auto;
+  background: #ffffff7e;
+}
+
+.Home-introduction-dot {
+  right: 2%;
+  padding: 0.1rem 0.2rem;
+}
+
+.Home-introduction-dot span.active {
+  background: var(--theme);
+}
+
+.Home-introduction-text-footer {
+  margin-top: 5%;
+  font-size: 0.22rem;
+  font-weight: 600;
+  font-family: '华文新魏';
+  cursor: pointer;
+}
+
+.Home-introduction-text-footer>span {
+  margin-right: 15%;
+}
+
+.Home-introduction-log {
+  display: none;
+
+}
+
+.Home-introduction-log.active {
+  display: inline-block;
+  display: none;
+}
+
+.Home-introduction-text-next {
+  padding: 0.01rem 0.10rem;
+  border-radius: 0.10rem;
+  transition: 0.5s;
+}
+
+.Home-introduction-text-next:hover {
+  background: #ffffff7e;
+}
+
+@media all and (max-width: 768px) {
+  .Home-latest-article {
+    display: none;
+  }
 }
