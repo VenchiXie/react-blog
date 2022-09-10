@@ -66,9 +66,11 @@ function App() {
     }
   }, [])
 
-  const searchRef = useRef<HTMLInputElement>()
+  const searchRef = useRef<HTMLInputElement>(null)
+  const searchWordKeyRef = useRef<HTMLInputElement>(null)
   // 打开搜索框
   const onClickSearch = () => {
+    searchWordKeyRef.current?.focus()
     document.body.style.overflow = 'hidden' // 禁止滚动
     searchRef.current!.classList.toggle('active')
   }

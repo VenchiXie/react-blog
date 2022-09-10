@@ -1,0 +1,78 @@
+.App-search {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  user-select: none;
+}
+
+/* 关闭搜索框 */
+.App-search.active {
+  display: block;
+  background: #00000099;
+}
+
+.App-search-container {
+  position: static;
+  margin: 15% auto;
+  padding: 0.15rem 0.2rem;
+  width: 5.2rem;
+  z-index: 1001;
+  border-radius: 0.10rem;
+  background: var(--theme);
+}
+
+.App-search-header {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding-bottom: 0.1rem;
+}
+
+.App-search-header>h3 {
+  color: #797979;
+}
+
+.App-search-header>span {
+  cursor: pointer;
+}
+
+.App-search-input-container {
+  height: 0.45rem;
+  border-radius: 0.05rem;
+}
+
+.App-search-input-container>input {
+  width: 99%;
+  height: 0.3rem;
+  text-indent: 1%;
+  border-radius: 0.08rem;
+}
+
+.App-search-datalist {
+  overflow: hidden;
+}
+
+.App-search-datalist ul {
+  padding: 0.05rem 0 0.03rem 0;
+  transform: translateX(4%);
+}
+
+.App-search-datalist ul li {
+  margin-bottom: 0.08rem;
+  transition: 0.5s;
+}
+
+.App-search-datalist ul li:hover {
+  color: #99a9bf;
+}
+
+
+.App-search-footer {
+  margin-top: 0.10rem;
+  padding: 0.1rem 0;
+  border-top: 0.04rem dashed var(--hamburger);
+}

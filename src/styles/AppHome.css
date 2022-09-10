@@ -25,9 +25,9 @@
 /*  名称 */
 .Home-name {
   position: fixed;
-  bottom: 30%;
-  left: 1.5%;
-  font-size: 1.5rem;
+  bottom: 35%;
+  left: 2.0%;
+  font-size: 1.6rem;
   font-weight: bolder;
   font-family: '华文楷体', '方正舒体';
 }
@@ -158,7 +158,6 @@
   font-size: 0.22rem;
   font-weight: 600;
   font-family: '华文新魏';
-  cursor: pointer;
 }
 
 .Home-introduction-text-footer>span {
@@ -179,6 +178,7 @@
   padding: 0.01rem 0.10rem;
   border-radius: 0.10rem;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .Home-introduction-text-next:hover {
