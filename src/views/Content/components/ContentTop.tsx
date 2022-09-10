@@ -1,5 +1,4 @@
 import { ContentArticleTags } from './ContentArticleTags'
-import { articlesAPi } from '@/api/articleAPI'
 
 /***
  * 置顶标题文章组件
