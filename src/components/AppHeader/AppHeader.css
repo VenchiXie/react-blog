@@ -42,7 +42,7 @@
 }
 
 .App-menu>li:hover>p {
-  color: #635e5d;
+  color: var(--text-hover);
 }
 
 .App-menu>li>p::before {
@@ -53,7 +53,7 @@
   right: 0;
   bottom: 0;
   opacity: 0;
-  border-bottom: 0.03rem solid #635e5d;
+  border-bottom: 0.03rem solid var(--text-hover);
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
   -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;

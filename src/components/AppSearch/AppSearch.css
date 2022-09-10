@@ -64,10 +64,11 @@
 .App-search-datalist ul li {
   margin-bottom: 0.08rem;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .App-search-datalist ul li:hover {
-  color: #99a9bf;
+  color: var(--text-hover);
 }
 
 

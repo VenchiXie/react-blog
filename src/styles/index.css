@@ -4,6 +4,8 @@
     "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
   /* 正文 */
   --font-size-16: 0.16rem;
+  --text-hover:#787878;
+  --text-tags:#858585;
   --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%)
 }
 
@@ -13,7 +15,8 @@ body[theme-mode='light'] {
   --text-color: #212121;
   --nav-background: #f6f8fa;
   --nav-item-background: #f6f8fa;
-  --hamburger: #0f0f0f
+  --hamburger: #0f0f0f;
+  --card-item:#ffffff9a;
 }
 
 /* Dark Mode */
@@ -23,6 +26,7 @@ body[theme-mode='dark'] {
   --nav-background: #212121;
   --nav-item-background: #212121;
   --hamburger: #eff1f5;
+  --card-item:#202020;
 }
 
 
