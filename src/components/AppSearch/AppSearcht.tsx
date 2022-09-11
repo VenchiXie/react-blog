@@ -1,33 +1,35 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { articlesAPI } from '@/api/articleAPI'
 import './AppSearch.css'
 
-const datalistApi = [
-  { key: '1', title: '内容1' },
-  { key: '2', title: '内容2' },
-  { key: '3', title: '内容3' },
-  { key: '4', title: '内容4' },
-  { key: '5', title: '内容5' },
-]
+/***
+ * 公共组件 - 搜索
+ *  */
 function AppSearch(props: any) {
   const { searchRef, onCloseSearch } = props
   const navigate = useNavigate()
-  const [datalist, setDataList] = useState<any>([...datalistApi])
-  const [filterDatalist, setFilterDatalist] = useState<any>([])
+  const [datalist, setDataList] = useState<any>([...articlesAPI]) // 文章数据列表
+  const [filterDatalist, setFilterDatalist] = useState<any>([])   // 渲染数据列表
 
+  /**
+   * 模糊查询
+   *  */
   const handleSearchWordKey = (e: any) => {
-    let keyword = e.target.value
-    if (keyword !== '') {
-      let data = datalist.filter((item: any) => item.title.includes(keyword))
-      setFilterDatalist(data)
-    } else {
-      setFilterDatalist([])
-    }
+    return setTimeout(() => {
+      let keyword = e.target.value
+      if (keyword !== '') {
+        let data = datalist.filter((item: any) => item.title.includes(keyword))
+        setFilterDatalist(data)
+      } else {
+        setFilterDatalist([])
+      }
+    }, 1500)
   }
 
   const onNavigate = (value: string) => {
-    console.log(value);
-    
+    // alert(value)
+    alert('无权访问,请联系博主')
   }
 
   return (
@@ -43,13 +45,17 @@ function AppSearch(props: any) {
         </article>
         {/* 模糊搜索列表 */}
         <article className="App-search-datalist">
-          <ul className="">
-            {filterDatalist.map((item: any) => (
-              <li key={item.key} onClick={() => onNavigate(item)}>
-                {item.title}
-              </li>
-            ))}
-          </ul>
+          {filterDatalist == '' ? (
+            '加载中'
+          ) : (
+            <ul>
+              {filterDatalist.map((item: any) => (
+                <li key={item.key} onClick={() => onNavigate(item)}>
+                  {item.title}
+                </li>
+              ))}
+            </ul>
+          )}
           {filterDatalist.length >= 1 ? (
             <footer className="App-search-footer">
               查询到&nbsp;{filterDatalist.length}&nbsp;条结果

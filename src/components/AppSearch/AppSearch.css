@@ -62,7 +62,7 @@
 }
 
 .App-search-datalist ul li {
-  margin-bottom: 0.08rem;
+  margin: 0.1rem 0;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -75,5 +75,7 @@
 .App-search-footer {
   margin-top: 0.10rem;
   padding: 0.1rem 0;
+  font-size: 0.14rem;
+  color: var(--text-tags);
   border-top: 0.04rem dashed var(--hamburger);
 }

@@ -211,15 +211,20 @@
 }
 
 /* 标签 */
+.Content-right-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .Content-right-tags>span {
-  margin: 0 0.05rem;
-  font-size: 0.18rem;
+  margin: 0 0.1rem;
   line-height: 1.7;
+  transition: 0.5s;
   color: var(--text-tags);
 }
 
 .Content-right-tags>span:nth-of-type(even) {
-  font-size: 0.20rem;
+  font-size: 0.22rem;
   font-weight: 660;
   color: #99a9bf;
   transition: 0.5s;
@@ -227,6 +232,7 @@
 
 .Content-right-tags>span:hover {
   color: var(--text-hover);
+  transform: scale(1.2);
   cursor: pointer;
 }
 

@@ -1,25 +1,53 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ContentTop } from './components/ContentTop'
-import { ContentArticle } from './components/ContentArticle'
+import { ContentTop, ContentArticle, ContentSaysay,ContentLatestArticle,ContentTags,ContentFile } from './components/index'
+import AppPaging from '@/components/AppPaging/AppPaging'
+import AppFooter from '@/components/AppFooter/AppFooter'
+
+import { tagAPI } from '@/api/tagAPI'
 import { articlesAPI } from '@/api/articleAPI'
 import { articlesTopAPI } from '@/api/articlesTopAPI'
-import { tagAPI } from '@/api/tagAPI'
-import AppFooter from '@/components/AppFooter/AppFooter'
 import '@/styles/AppContent.css'
-import { ContentSaysay } from './components/ContentSaysay'
-import { ContentLatestArticle } from './components/ContentLatestArticle'
-import { ContentTags } from './components/ContentTags'
-import { ContentFile } from './components/ContentFile'
 
 /***
  * 内容页
  *  */
+
+const paging:any = {
+  pageSize : 3,   // 每一页要显示的数据条数
+  totalPage: 0,   // 总页数
+  current  : localStorage.getItem('current')  || 1,   // 当前的页码
+}
 function AppContent() {
+  
   const navigate = useNavigate()
   const onNavigate = (value: string) => {
     // alert(value)
     alert('无权访问,请联系博主')
+  }
+
+  // 文章数据列表
+  const [datalist, setDatalist] = useState<any>([])
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      update()
+    }, 300)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
+
+
+  /**
+   * 根据上下页点击页数的变化而变化
+   *  */
+  const update = () => {
+    // 设置总页数
+    paging.totalPage = Math.ceil(articlesAPI.length / paging.pageSize || 1)
+    let before = (paging.current - 1) * paging.pageSize
+    let after  = paging.current * paging.pageSize
+    // 分割内容
+    setDatalist(articlesAPI.slice(before, after))
   }
   return (
     <section className="Content">
@@ -29,7 +57,10 @@ function AppContent() {
           <ContentTop datalist={articlesTopAPI} onNavigate={onNavigate}></ContentTop>
 
           {/* 文章列表 */}
-          <ContentArticle datalist={articlesAPI} onNavigate={onNavigate}></ContentArticle>
+          <ContentArticle datalist={datalist} onNavigate={onNavigate}></ContentArticle>
+
+          {/* 分页 */}
+          <AppPaging paging={paging} update={update}></AppPaging>
         </article>
         {/* 侧边信息 */}
         <article className="Content-right">
