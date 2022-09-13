@@ -9,15 +9,15 @@ import './AppSearch.css'
 function AppSearch(props: any) {
   const { searchRef, onCloseSearch } = props
   const navigate = useNavigate()
-  const [datalist, setDataList] = useState<any>([...articlesAPI]) // 文章数据列表
-  const [filterDatalist, setFilterDatalist] = useState<any>([])   // 渲染数据列表
+  const [datalist, setDataList]             = useState<any>([...articlesAPI])  // 文章数据列表
+  const [filterDatalist, setFilterDatalist] = useState<any>([])                // 渲染数据列表
 
   /**
    * 模糊查询
    *  */
   const handleSearchWordKey = (e: any) => {
     return setTimeout(() => {
-      let keyword = e.target.value
+      let keyword = e.target.value      
       if (keyword !== '') {
         let data = datalist.filter((item: any) => item.title.includes(keyword))
         setFilterDatalist(data)
@@ -31,6 +31,10 @@ function AppSearch(props: any) {
     // alert(value)
     alert('无权访问,请联系博主')
   }
+  useEffect(() => {
+    return () => {
+    }
+  }, [])
 
   return (
     <section className="App-search" ref={searchRef}>
@@ -41,7 +45,11 @@ function AppSearch(props: any) {
         </header>
         {/* 搜索input */}
         <article className="App-search-input-container">
-          <input type="text" placeholder="请输入内容" onChange={(e) => handleSearchWordKey(e)}/>
+          <input
+            type="text"
+            placeholder="请输入内容"
+            onChange={(e) => handleSearchWordKey(e)}
+          />
         </article>
         {/* 模糊搜索列表 */}
         <article className="App-search-datalist">

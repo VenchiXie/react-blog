@@ -6,7 +6,7 @@ export const IntroductionInfo = (props: any) => {
     <nav className="Introduction-info">
       <div className="Introduction-info-header">
         <div className="Introduction-info-img">
-          <img src="/src/assets/logo.jpg" />
+          <img src="/public/logo.jpg" />
         </div>
         <div className="Introduction-info-name">
           <p>你好，</p>
