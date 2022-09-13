@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import AppFooter from '@/components/AppFooter/AppFooter'
 import { IntroductionRender } from './components/IntroductionRender'
-import '@/styles/AppHome.css'
 import { IatestArticleRender } from './components/IatestArticle'
+import AppFooter from '@/components/AppFooter/AppFooter'
+import { articlesAPI } from '@/api/articleAPI'
+import '@/styles/AppHome.css'
 /**
  * 首页
  *  */
@@ -29,23 +30,6 @@ const introductionText = [
   },
 ]
 
-const latestArticle = [
-  {
-    key: '1',
-    content: '内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容',
-    img: 'https://raw.githubusercontent.com/LinXiuci/image/main/img/20210118140157_4ef6d.jpg',
-  },
-  {
-    key: '2',
-    content: '内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容',
-    img: 'https://raw.githubusercontent.com/LinXiuci/image/main/img/img22.jpg',
-  },
-  {
-    key: '3',
-    content: '内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容',
-    img: 'https://raw.githubusercontent.com/LinXiuci/image/main/img/img24.jpg',
-  },
-]
 function AppHome() {
   const homeBackgroundRef             = useRef<HTMLInputElement>(null)
   let   [globalIndex, setGlobalIndex] = useState(0)                     // 当时索引
@@ -92,10 +76,11 @@ function AppHome() {
 
         {/* 名称 */}
         <article className="Home-name">
-          <span>Lin ran</span>
+          <span>林</span>
+          <span>染</span>
         </article>
         {/* 最新文章 */}
-        <IatestArticleRender latestArticle={latestArticle}></IatestArticleRender>
+        <IatestArticleRender datalist={ articlesAPI}></IatestArticleRender>
         {/* 个人介绍 */}
         <IntroductionRender
           globalIndex={globalIndex}
