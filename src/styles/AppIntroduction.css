@@ -1,13 +1,156 @@
-.Introduction{
+.Introduction {
   width: 100%;
   height: 100%;
 }
 
 .Introduction-main {
+  padding: 0.1rem;
+  margin: auto;
+  max-width: 14.00rem;
+  min-height: 100%;
+  height: auto;
+}
+
+
+/* --------------- 顶部、中部、底部 --------------- */
+.Introduction-ul:nth-child(1) {
+  margin-top: 12%;
+}
+
+.Introduction-ul:nth-child(2) {
+  margin-top: 5%;
+}
+
+.Introduction-ul {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+}
+
+
+.Introduction-ul>li {
+  margin-bottom: 3%;
+  display: block;
+  width: 32%;
+  height: 3.20rem;
+  transition: 0.5s;
+  border-radius: 0.10rem;
+  backdrop-filter: blur(10px);
+  background: var(--card-item);
+}
+
+.Introduction-ul>li:hover {
+  box-shadow: 0 0 0.12rem var(--text-hover);
+}
+
+/* 用户信息 */
+.Introduction-info-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  padding: 0.3rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Introduction-info-img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.Introduction-info-img>img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+}
+
+/* 用户名 */
+.Introduction-info-name {
+  width: calc(100% - 1rem);
+  height: inherit;
+  font-size: 0.25rem;
+  font-weight: 660;
+  font-family: '幼圆';
+  text-indent: 5%;
+  letter-spacing: 0.02rem;
+}
+
+
+/* 用户信息中部 */
+.Introduction-info-mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
+
+.Introduction-info-mid>a {
+  width: 20%;
+  height: 70%;
+  text-align: center;
+  line-height: 4;
+}
+
+.Introduction-info-mid>a>p {
+  transition: 0.5s;
+}
+
+.Introduction-info-mid>a>p:hover {
+  transform: scale(1.2);
+}
+
+/* github */
+.Introduction-ul>li:nth-child(2) .App-loading {
+  margin-top: 30% !important;
+}
+
+/* 招呼gif */
+.Introduction-gif {
+  width: 100%;
+  border-radius: 0.10rem;
+  height: inherit;
+  overflow: hidden;
+}
+
+.Introduction-gif>a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Introduction-gif>a img {
+  width: 95%;
+  height: 95%;
+}
+
+@media all and (max-width: 1400px) {
+  .Introduction-main {
+    width: 98%;
+    margin: auto;
+  }
+}
+
+
+@media all and (max-width: 768px) {
+  .Introduction-main {
+    width: 96%;
+    margin: auto;
+  }
+
+  .Introduction-ul>li {
+    margin: 0.1rem auto;
+    width: 100%;
+    transition: 1s;
+  }
+
+
 }

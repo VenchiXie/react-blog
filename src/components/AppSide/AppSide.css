@@ -5,7 +5,7 @@
   transform: translateX(100%);
   transition: 0.3s;
   user-select: none;
-  z-index: 99;
+  z-index: 999;
 }
 
 .AppSide-active {
