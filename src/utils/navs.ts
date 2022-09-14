@@ -1,42 +1,51 @@
+import AppIcon from '@/components/AppIcon/AppIcon'
 
 /***
  * 导航栏
- *  */ 
+ *  */
 const navs = [
   {
-    key: 2,
+    key: 1,
     name: '博客',
     sub_nav: [
-      { name: '内容', path: '/app_content' },
-      { name: '哔哩', href: 'https://www.bilibili.com/' },
-      { name: '归档', path: '/app_filing' },
+      { name: '内容', icon: 'home-outline', path: '/app_content' },
+      { name: '哔哩', icon: 'logo-twitch', href: 'https://www.bilibili.com/' },
+      { name: '归档', icon: 'albums-outline', path: '/app_filing' },
+    ],
+  },
+  {
+    key: 2,
+    name: '影音',
+    sub_nav: [
+      { name: '相册', icon: 'image-outline', path: '/app_album' },
+      { name: '足迹', icon: 'location-outline', path: '/app_footmark' },
+      { name: '物品', icon: 'layers-outline', path: '/app_wupin' },
     ],
   },
   {
     key: 3,
-    name: '影音',
+    name: '作者',
     sub_nav: [
-      { name: '相册', path: '/app_album' },
-      { name: '足迹', path: '/app_footmark' },
-      { name: '物品', path: '/app_wupin' },
+      { name: '简介', icon: 'ribbon-outline', path: '/app_introduction' },
+      { name: '项目', icon: 'logo-steam', path: '/app_project' },
+      { name: '友链', icon: 'person-add-outline', path: '/app_friend' },
     ],
   },
   {
     key: 4,
-    name: '作者',
-    sub_nav: [
-      { name: '简介', path: '/app_introduction' },
-      { name: '项目', path: '/app_project' },
-      { name: '友链', path: '/app_friend' },
-    ],
-  },
-  {
-    key: 5,
     name: '空间',
     sub_nav: [
-      { name: '速查', href: 'https://cn.bing.com/' },
-      { name: '论坛', href: 'https://www.zhihu.com/'},
-      { name: '服务', href: 'https://www.code-nav.cn/' },
+      {
+        name: '速查',
+        icon: 'paper-plane-outline',
+        href: 'https://cn.bing.com/',
+      },
+      { name: '论坛', icon: 'people-outline', href: 'https://www.zhihu.com/' },
+      {
+        name: '服务',
+        icon: 'footsteps-outline',
+        href: 'https://www.code-nav.cn/',
+      },
     ],
   },
 ]

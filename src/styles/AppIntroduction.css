@@ -82,28 +82,66 @@
 
 
 /* 用户信息中部 */
-.Introduction-info-mid {
+.Introduction-info-mid,
+.Introduction-info-mid>a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+}
+
+.Introduction-info-mid {
+  justify-content: space-between;
   width: 85%;
   height: auto;
   margin: auto;
 }
 
 .Introduction-info-mid>a {
-  width: 20%;
-  height: 70%;
+  flex-direction: column;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
   text-align: center;
-  line-height: 4;
+  font-size: 0.14rem;
+  border-radius: 0.15rem;
 }
 
-.Introduction-info-mid>a>p {
+.Introduction-info-mid>a span {
+  display: block;
   transition: 0.5s;
+  line-height: 1;
 }
 
-.Introduction-info-mid>a>p:hover {
-  transform: scale(1.2);
+.Introduction-info-mid>a span:nth-child(2) {
+  transform: scale(0);
+}
+
+.Introduction-info-mid>a:hover span:nth-child(1) {
+  transform: scale(0.8);
+}
+
+.Introduction-info-mid>a:hover span:nth-child(2) {
+  transform: scale(1);
+}
+
+.Introduction-info-mid>a:hover:nth-child(1) {
+  background: rgb(29, 155, 240);
+  box-shadow: 0 15px 25px rgb(29, 155, 240);
+}
+
+.Introduction-info-mid>a:hover:nth-child(2) {
+  background: #07C160;
+  box-shadow: 0 15px 25px #07C160;
+}
+
+.Introduction-info-mid>a:hover:nth-child(3) {
+  background: rgb(0, 118, 180);
+  box-shadow: 0 15px 25px rgb(0, 118, 180);
+}
+
+.Introduction-info-mid>a:hover:nth-child(4) {
+  background: rgb(153, 153, 153);
+  box-shadow: 0 15px 25px rgb(153, 153, 153);
 }
 
 /* github */
@@ -152,5 +190,9 @@
     transition: 1s;
   }
 
-
+  .Introduction-info-mid>a {
+    width: 60px;
+    height: 60px;
+  }
+  
 }

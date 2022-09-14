@@ -1,6 +1,23 @@
+import AppIcon from '@/components/AppIcon/AppIcon'
 /***
  * 组件 - 用户信息
  *  */
+const contacts = [
+  {
+    key: '1',
+    name: '哔哩哔哩',
+    link: 'https://www.bilibili.com/',
+    icon: 'logo-twitch',
+  },
+  { key: '2', name: 'WeChat', link: '#', icon: 'logo-wechat' },
+  { key: '3', name: 'QQ', link: '#', icon: 'logo-snapchat' },
+  {
+    key: '4',
+    name: 'GitHub',
+    link: 'https://github.com/LinXiuci',
+    icon: 'logo-octocat',
+  },
+]
 export const IntroductionInfo = (props: any) => {
   return (
     <nav className="Introduction-info">
@@ -14,18 +31,14 @@ export const IntroductionInfo = (props: any) => {
         </div>
       </div>
       <div className="Introduction-info-mid">
-        <a href="">
-          <p>图1</p>
-        </a>
-        <a href="">
-          <p>图2</p>
-        </a>
-        <a href="">
-          <p>图3</p>
-        </a>
-        <a href="">
-          <p>图4</p>
-        </a>
+        {contacts.map((item) => (
+          <a href={item.link} key={item.key} target="_blank">
+            <span>
+              <AppIcon name={item.icon}></AppIcon>
+            </span>
+            <span>{item.name}</span>
+          </a>
+        ))}
       </div>
       <div className="Introduction-info-bottom"></div>
     </nav>
