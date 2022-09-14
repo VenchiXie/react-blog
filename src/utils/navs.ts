@@ -1,5 +1,3 @@
-import AppIcon from '@/components/AppIcon/AppIcon'
-
 /***
  * 导航栏
  *  */
@@ -40,7 +38,10 @@ const navs = [
         icon: 'paper-plane-outline',
         href: 'https://cn.bing.com/',
       },
-      { name: '论坛', icon: 'people-outline', href: 'https://www.zhihu.com/' },
+      { 
+        name: '论坛', 
+        icon: 'people-outline', 
+        href: 'https://www.zhihu.com/' },
       {
         name: '服务',
         icon: 'footsteps-outline',
