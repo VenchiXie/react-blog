@@ -10,7 +10,7 @@ import './AppHeader.css'
  * 导航栏
  *  */
 function AppHeader(props:any) {
-  const {  onClickSearch } = props
+  const { author , onClickSearch } = props
   const navigate   = useNavigate()
   const {pathname} = useLocation()
   const menuRef        = useRef<any>()    // 菜单
@@ -59,7 +59,7 @@ function AppHeader(props:any) {
       {/* 导航栏 */}
       <nav className="App-nav">
         {/* logo */}
-        <article className="App-Logo" onClick={() => onNavigate('/')}> Logo </article>
+        <article className="App-Logo" onClick={() => onNavigate('/')}>{author}</article>
         {/* 菜单遮罩 */}
         <article  className="App-menu-mask" ref={menuMaskRef} onClick={onDisplayOrHideMenus}></article>
         {/* 菜单 */}

@@ -3,8 +3,8 @@ export const articlesAPI = [
     key: '2',
     title: 'new命令原理',
     isTop: false,
-    start_time: '2022-09-10',
-    count_time: '5',
+    start_time: 'xxxx-09-10',
+    count_time: 'x',
     tags: '技术',
     title_img:
       'https://raw.githubusercontent.com/LinXiuci/image/main/img/40.jpeg',
@@ -16,8 +16,8 @@ export const articlesAPI = [
     key: '3',
     title: 'MVVM模式',
     isTop: false,
-    start_time: '2022-08-06',
-    count_time: '43',
+    start_time: 'xxxx-08-06',
+    count_time: 'xx',
     tags: '技术',
     title_img:
       'https://raw.githubusercontent.com/LinXiuci/image/main/img/41.jpeg',
@@ -29,8 +29,8 @@ export const articlesAPI = [
     key: '4',
     title: '防抖与节流函数',
     isTop: false,
-    start_time: '2022-09-10',
-    count_time: '10',
+    start_time: 'xxxx-09-10',
+    count_time: 'xx',
     tags: '技术',
     title_img:
       'https://raw.githubusercontent.com/LinXiuci/image/main/img/50.jpeg',
@@ -43,8 +43,8 @@ export const articlesAPI = [
     key: '5',
     title: 'vue双向绑定原理及实现',
     isTop: false,
-    start_time: '2022-07-10',
-    count_time: '55',
+    start_time: 'xxxx-07-10',
+    count_time: 'xx',
     tags: '技术',
     title_img:
       'https://raw.githubusercontent.com/LinXiuci/image/main/img/51.jpeg',

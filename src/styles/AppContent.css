@@ -83,15 +83,18 @@
 .Content-top-article-tags {
   padding-top: 0.1rem;
   width: 100%;
-  height: auto;
-  align-items: center;
   font-size: 0.15rem;
   line-height: 1.5;
 }
 
-.Content-top-article-tags>span {
+.Content-top-article-tags>p {
+  display: inline;
   margin-right: 0.05rem;
   color: var(--text-tags);
+}
+
+.Content-top-article-tags ion-icon {
+  transform: translateY(15%);
 }
 
 .Content-top-article-tags .Content-article-istop {

@@ -3,8 +3,8 @@ export const articlesTopAPI = [
     key: '4',
     title: '我做了一个手写春联小网页，祝大家虎年暴富',
     isTop: true,
-    start_time: '2022-01-30',
-    count_time: '230',
+    start_time: 'xxxx-01-30',
+    count_time: 'xxx',
     tags: '技术',
     title_img:
       'https://img-blog.csdnimg.cn/img_convert/185c88180b87ac7277072280a0c144ce.png',

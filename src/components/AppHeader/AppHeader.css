@@ -14,6 +14,15 @@
   top: -0.6rem;
 }
 
+
+.App-Logo {
+  font-size: 0.3rem;
+  font-weight: 660;
+  font-family: '幼圆';
+  cursor: pointer;
+}
+
+
 .App-nav {
   display: flex;
   justify-content: space-between;
@@ -114,13 +123,6 @@
 }
 
 
-
-.App-Logo {
-  font-size: 0.3rem;
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-}
 
 .App-hamburger {
   display: none;

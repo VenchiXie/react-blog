@@ -1,7 +1,5 @@
 import AppIcon from '@/components/AppIcon/AppIcon'
-/***
- * 组件 - 用户信息
- *  */
+
 const contacts = [
   {
     key: '1',
@@ -18,12 +16,19 @@ const contacts = [
     icon: 'logo-octocat',
   },
 ]
-export const IntroductionInfo = (props: any) => {
+interface propsType {
+  avatar: string
+}
+/***
+ * 组件 - 用户信息
+ *  */
+export const IntroductionInfo = (props: propsType) => {
+  const { avatar } = props
   return (
     <nav className="Introduction-info">
       <div className="Introduction-info-header">
         <div className="Introduction-info-img">
-          <img src="/public/logo.jpg" />
+          <img src={avatar} />
         </div>
         <div className="Introduction-info-name">
           <p>你好，</p>

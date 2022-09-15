@@ -1,9 +1,5 @@
 import { ContentArticleTags } from './ContentArticleTags'
 
-/***
- * 置顶标题文章组件
- *  */
-
 interface propsTyte {
   datalist: {
     key: string
@@ -32,6 +28,9 @@ interface subPropsTyte {
   }
   onNavigate: (value: string) => void
 }
+/***
+ * 置顶标题文章组件
+ *  */
 export const ContentTop = (props: propsTyte) => {
   const { datalist, onNavigate } = props
   return (
@@ -52,13 +51,12 @@ export const ContentTop = (props: propsTyte) => {
 }
 
 const ContentTopRender = (props: subPropsTyte) => {
-  const { item,onNavigate } = props
+  const { item, onNavigate } = props
   return (
-    <section className="Content-top" key={item.key} onClick={()=>onNavigate(item.key+item.title)}>
+    <section
+      className="Content-top" key={item.key} onClick={() => onNavigate(item.key + item.title)}>
       <article className="Content-top-left">
-        <div
-          style={{ backgroundImage: `URL(${item.title_img})` }}
-          className="Content-top-article-img"></div>
+        <div style={{ backgroundImage: `URL(${item.title_img})`}} className="Content-top-article-img"></div>
       </article>
       <article className="Content-top-right">
         <nav className="Content-top-title">
@@ -66,7 +64,9 @@ const ContentTopRender = (props: subPropsTyte) => {
         </nav>
         <ContentArticleTags tags={item}></ContentArticleTags>
         <main className="Content-top-article-describe">
-          <p>{item.describe.length > 300 ? item.describe.substring(0, 300) + ' ...' : item.describe}</p>
+          <p>
+            {item.describe.length > 300 ? item.describe.substring(0, 300) + ' ...' : item.describe}
+          </p>
         </main>
       </article>
     </section>

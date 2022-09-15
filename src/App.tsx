@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import AppHeader from '@/components/AppHeader/AppHeader'
 import AppSearch from './components/AppSearch/AppSearcht'
@@ -8,6 +8,12 @@ import '@/styles/App.css'
  * 布局页
  *  */
 function App() {
+
+  // 作者名字 --  将放在 redux 中
+  const [author,setAuthor] =useState(()=>localStorage.getItem('author') || '林染同学')
+
+  // 
+
   // 获取导航栏DOM
   const headerRef = useRef<HTMLInputElement>(null)
   // 记录滚动条的高度位置
@@ -87,8 +93,8 @@ function App() {
       <AppSearch searchRef={searchRef} onCloseSearch={onCloseSearch}></AppSearch>
       {/* 侧边小工具 */}
       <AppSide></AppSide>
-      <header className="App-header" ref={headerRef}>
-        <AppHeader headerRef={headerRef} onClickSearch={onClickSearch}></AppHeader>
+      <header className="App-header" ref={headerRef} >
+        <AppHeader headerRef={headerRef} author={author} onClickSearch={onClickSearch}></AppHeader>
       </header>
       <main className="App-main">
         <Outlet></Outlet>
