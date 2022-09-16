@@ -6,7 +6,7 @@
   user-select: none;
   transition: top 0.8s;
   box-sizing: border-box;
-  z-index: 990;
+  z-index: 9;
 }
 
 /* 页面导航栏上拉显示下拉隐藏 */
@@ -156,8 +156,6 @@
 
   .App-menu>li {
     position: relative;
-    margin: 70px 0 100px -50px;
-    margin: 30% 0 45% -20%;
     margin: 0.5rem 0 1.3rem -0.40rem;
   }
 
@@ -166,7 +164,7 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 70%;
+    width: 80%;
     height: 100%;
     transition: 0.2s;
     background: #09090ce8;
@@ -227,11 +225,14 @@
 
 }
 
+@media all and (max-width: 425px) {
+  .App-menu>li {
+    margin: 0.5rem 0 1.6rem -0.75rem;
+  }
 
-@media all and (max-width: 767px) {
-
-  .App-sub-menu>li>span:nth-child(1),
-  .App-sub-menu>a>span:nth-child(1) {
-    display: none;
+  .App-sub-menu>li,
+  .App-sub-menu>a {
+    width: 70px;
+    margin-top: 5.0px;
   }
 }

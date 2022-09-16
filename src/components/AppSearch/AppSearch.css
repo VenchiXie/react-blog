@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 10;
   user-select: none;
 }
 
@@ -20,7 +20,7 @@
   margin: 15% auto;
   padding: 0.15rem 0.2rem;
   width: 5.2rem;
-  z-index: 1001;
+  z-index: 9;
   border-radius: 0.10rem;
   background: var(--theme);
 }

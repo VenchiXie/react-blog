@@ -1,6 +1,7 @@
 import { useEffect, useRef} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { debounce } from '@/utils/debounce'
+
 import AppIcon from '@/components/AppIcon/AppIcon'
 import navs from '@/utils/navs'
 import './AppHeader.css'
@@ -10,9 +11,11 @@ import './AppHeader.css'
  * 导航栏
  *  */
 function AppHeader(props:any) {
-  const { author , onClickSearch } = props
-  const navigate   = useNavigate()
-  const {pathname} = useLocation()
+  const { onClickSearch } = props
+  console.log();
+  const { author } = JSON.parse(localStorage.getItem('user') as string)
+  const navigate     = useNavigate()
+  const { pathname } = useLocation()
   const menuRef        = useRef<any>()    // 菜单
   const menuMaskRef    = useRef<any>()    // 菜单遮罩
   const hamburgerRef   = useRef<any>()    // 显示菜单按钮

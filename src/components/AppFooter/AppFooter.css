@@ -8,7 +8,7 @@
   padding: 0.2rem 0;
   background: var(--theme);
   user-select: none;
-  z-index: 998;
+  z-index: 8;
 }
 
 .App-footer-table {

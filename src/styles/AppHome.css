@@ -33,7 +33,8 @@
   font-family: '华文彩云';
   user-select: none;
 }
-.Home-name>span:nth-child(2){
+
+.Home-name>span:nth-child(2) {
   position: absolute;
   left: 120%;
   top: 40%;
@@ -42,14 +43,13 @@
 /* 最新文章 */
 .Home-latest-article {
   position: fixed;
-  right: 2%;
-  bottom: 19%;
+  right: 10%;
+  bottom: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 5rem;
   user-select: none;
-  z-index: 9;
+  z-index:8;
 }
 
 .Home-latest-article-ul>li {
@@ -137,12 +137,12 @@
   font-family: '华文楷体', '方正舒体';
 }
 
-.Home-introduction-ul li {
+.Home-introduction-ul>li {
   display: none;
 
 }
 
-.Home-introduction-ul li.active {
+.Home-introduction-ul>li.active {
   display: block;
 }
 
@@ -164,35 +164,32 @@
   background: var(--theme);
 }
 
-.Home-introduction-text-footer {
+.Home-introduction-index {
   margin-top: 5%;
   font-size: 0.22rem;
   font-weight: 600;
   font-family: '华文新魏';
 }
 
-.Home-introduction-text-footer>span {
+.Home-introduction-index>span {
   margin-right: 15%;
-}
-
-.Home-introduction-log {
   display: none;
 
 }
 
-.Home-introduction-log.active {
+.Home-introduction-index>span.active {
   display: inline-block;
-  display: none;
 }
 
-.Home-introduction-text-next {
+.Home-introduction-next {
+  display: inline-block !important;
   padding: 0.01rem 0.10rem;
   border-radius: 0.10rem;
   transition: 0.5s;
   cursor: pointer;
 }
 
-.Home-introduction-text-next:hover {
+.Home-introduction-next:hover {
   background: #ffffff7e;
 }
 
