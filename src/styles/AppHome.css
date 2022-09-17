@@ -30,7 +30,7 @@
   left: 2.0%;
   font-size: 1.5rem;
   font-weight: bolder;
-  font-family: '华文彩云';
+  font-family: '幼圆';
   user-select: none;
 }
 
@@ -49,7 +49,7 @@
   flex-direction: column;
   align-items: center;
   user-select: none;
-  z-index:8;
+  z-index: 8;
 }
 
 .Home-latest-article-ul>li {

@@ -16,7 +16,7 @@
 
 
 .App-Logo {
-  font-size: 0.3rem;
+  font-size: 0.25rem;
   font-weight: 660;
   font-family: '幼圆';
   cursor: pointer;
@@ -196,6 +196,7 @@
     position: relative;
     margin: 0.8rem 0 0.8rem -50%;
     transform: translateX(50%);
+    font-size: 18px !important;
     box-sizing: border-box;
   }
 
@@ -234,6 +235,15 @@
 
 @media all and (max-width: 600px) {
 
+  .App-menu>li {
+    margin: 0.8rem 0 0.8rem -65%;
+  }
+
+  .App-sub-menu>li,
+  .App-sub-menu>a {
+    width: 70px;
+  }
+
   .App-sub-menu>li>span:nth-child(2),
   .App-sub-menu>a>span:nth-child(2) {
     transform: translateY(-4.1%);
@@ -241,21 +251,11 @@
 }
 
 
-@media all and (max-width: 425px) {
-
-  .App-menu>li {
-    margin: 0.8rem 0 0.8rem -60%;
-  }
-
-  .App-sub-menu>li,
-  .App-sub-menu>a {
-    width: 70px;
-  }
-}
+@media all and (max-width: 425px) {}
 
 
 @media all and (min-width: 0px) and (max-width: 320px) {
   .App-menu>li {
-    margin: 40% 0 40% -70%;
+    margin: 45% 0 45% -75%;
   }
 }
