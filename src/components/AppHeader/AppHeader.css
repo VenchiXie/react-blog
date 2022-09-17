@@ -105,6 +105,7 @@
   border-radius: 0.1rem;
   border: 0.01rem solid transparent;
   background: var(--nav-item-background);
+  background: var(--card)
 }
 
 .App-sub-menu>li>span,
@@ -117,12 +118,15 @@
   transform: translateY(2px);
 }
 
+.App-sub-menu>li>span:nth-child(3),
+.App-sub-menu>a>span:nth-child(3) {
+  display: none;
+}
+
 .App-sub-menu>li:hover,
 .App-sub-menu>a:hover {
   border: 0.01rem solid;
 }
-
-
 
 .App-hamburger {
   display: none;
@@ -144,7 +148,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 30%;
+    width: 60%;
     height: 100%;
     text-align: center;
     transition: 0.3s;
@@ -159,7 +163,7 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 80%;
+    width: 50%;
     height: 100%;
     transition: 0.2s;
     background: #09090ce8;
@@ -193,19 +197,25 @@
   }
 
   .App-menu>li {
-    position: relative;
-    margin: 0.8rem 0 0.8rem -50%;
-    transform: translateX(50%);
-    font-size: 16px !important;
+    left: 50%;
+    margin: 10% 0 35% 0%;
+    width: 100%;
+    text-align: left;
+    font-size: 15px !important;
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
   }
 
   .App-menu>li>p {
-    display: none;
+    margin: auto;
+    width: 77.5%;
+    color: var(--text-hover);
+    font-size: 14px !important;
+    box-sizing: border-box;
   }
 
   .App-menu>li:hover p::before {
-    transform: scale(1) translateY(10%);
+    transform: scale(0) translateY(10%);
   }
 
   .App-menu>li:hover .App-sub-menu {
@@ -218,14 +228,45 @@
   }
 
   .App-sub-menu {
-    left: 0;
+    width: 90%;
+    left: 5%;
     transform: translateY(2.5%);
+    border-radius: 0.25rem;
+    background: var(--card)
   }
 
   .App-sub-menu>li,
   .App-sub-menu>a {
-    margin: 10% auto;
+    margin: 1% auto;
+    width: 90%;
+    height: inherit;
     overflow: hidden;
+    background: var(--card);
+    border-radius: 0.25rem;
+    border: 0.00rem solid transparent;
+  }
+
+
+  .App-sub-menu>li>span:nth-child(1),
+  .App-sub-menu>a>span:nth-child(1) {
+    display: none;
+  }
+
+  .App-sub-menu>li>span:nth-child(2),
+  .App-sub-menu>a>span:nth-child(2) {
+    display: inline-block;
+    width: 90%;
+  }
+
+  .App-sub-menu>li>span:nth-child(3),
+  .App-sub-menu>a>span:nth-child(3) {
+    display: inline-block;
+  }
+
+
+  .App-sub-menu>li:hover,
+  .App-sub-menu>a:hover {
+    border: 0rem solid;
   }
 
   .App-menu ion-icon {
@@ -233,28 +274,14 @@
   }
 }
 
-@media all and (max-width: 600px) {
-
+@media all and (max-width: 500px) {
   .App-menu>li {
-    margin: 0.8rem 0 0.8rem -75%;
+    margin: 15% 0 35% 0%;
+    transform: translate(-50%, -50%);
   }
 
   .App-sub-menu>li,
   .App-sub-menu>a {
-    width: 70px;
-  }
-
-  .App-sub-menu>li>span:nth-child(2),
-  .App-sub-menu>a>span:nth-child(2) {
-    transform: translateY(-4.1%);
-  }
-}
-
-
-
-
-@media all and (min-width: 0px) and (max-width: 320px) {
-  .App-menu>li {
-    margin: 45% 0 45% -75%;
+    margin: 2% auto;
   }
 }

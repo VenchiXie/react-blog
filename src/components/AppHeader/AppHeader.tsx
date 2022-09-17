@@ -132,12 +132,14 @@ const AppSubMenuRender = (props: subPropsType) => {
             <a key={item.name} ref={getSubMenuItem} href={item.href} target="__blank">
               <span> <AppIcon name={item.icon} size="small"></AppIcon></span>
               <span>{item.name}</span>
+              <span>&gt;</span>
             </a>
         ) : (
           <li
             key={item.name} ref={getSubMenuItem} onClick={() => onNavigate(item.path)}>
             <span> <AppIcon name={item.icon} size="small"></AppIcon></span>
             <span>{item.name}</span>
+            <span>&gt;</span>
           </li>
         )
       })}

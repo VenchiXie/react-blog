@@ -14,9 +14,9 @@
 body[theme-mode='light'] {
   --theme: #eff1f5;
   --text-color: #212121;
-  --nav-background: #f6f8fa;
-  --nav-item-background: #f6f8fa;
+  --nav-background: #eff1f5;
   --hamburger: #0f0f0f;
+  --card:#ffffff;
   --card-item: #ffffff9a;
 }
 
@@ -24,9 +24,9 @@ body[theme-mode='light'] {
 body[theme-mode='dark'] {
   --theme: #0f0f0f;
   --text-color: #eff1f5;
-  --nav-background: #212121;
-  --nav-item-background: #212121;
+  --nav-background: #111111;
   --hamburger: #eff1f5;
+  --card:#1D1D1D;
   --card-item: #202020;
 }
 
