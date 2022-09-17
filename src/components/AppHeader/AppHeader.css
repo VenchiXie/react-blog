@@ -154,11 +154,6 @@
     background: var(--nav-background);
   }
 
-  .App-menu>li {
-    position: relative;
-    margin: 0.5rem 0 1.3rem -0.40rem;
-  }
-
   /* 遮罩 */
   .App-menu-mask {
     position: fixed;
@@ -197,16 +192,15 @@
     display: none;
   }
 
-  .App-sub-menu {
-    margin-top: 20%;
-    left: -15%;
-    transform: translateY(2.5%);
-  }
-
   .App-menu>li {
     position: relative;
-    height: 0.22rem;
-    line-height: 0.2rem;
+    margin: 0.8rem 0 0.8rem -50%;
+    transform: translateX(50%);
+    box-sizing: border-box;
+  }
+
+  .App-menu>li>p {
+    display: none;
   }
 
   .App-menu>li:hover p::before {
@@ -222,17 +216,46 @@
     display: none;
   }
 
+  .App-sub-menu {
+    left: 0;
+    transform: translateY(2.5%);
+  }
 
+  .App-sub-menu>li,
+  .App-sub-menu>a {
+    margin: 10% auto;
+    overflow: hidden;
+  }
+
+  .App-menu ion-icon {
+    --ionicon-stroke-width: 25px;
+  }
 }
 
+@media all and (max-width: 600px) {
+
+  .App-sub-menu>li>span:nth-child(2),
+  .App-sub-menu>a>span:nth-child(2) {
+    transform: translateY(-4.1%);
+  }
+}
+
+
 @media all and (max-width: 425px) {
+
   .App-menu>li {
-    margin: 0.5rem 0 1.6rem -0.75rem;
+    margin: 0.8rem 0 0.8rem -60%;
   }
 
   .App-sub-menu>li,
   .App-sub-menu>a {
     width: 70px;
-    margin-top: 5.0px;
+  }
+}
+
+
+@media all and (min-width: 0px) and (max-width: 320px) {
+  .App-menu>li {
+    margin: 40% 0 40% -70%;
   }
 }
