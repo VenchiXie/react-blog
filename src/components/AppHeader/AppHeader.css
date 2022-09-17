@@ -196,7 +196,7 @@
     position: relative;
     margin: 0.8rem 0 0.8rem -50%;
     transform: translateX(50%);
-    font-size: 18px !important;
+    font-size: 16px !important;
     box-sizing: border-box;
   }
 
@@ -236,7 +236,7 @@
 @media all and (max-width: 600px) {
 
   .App-menu>li {
-    margin: 0.8rem 0 0.8rem -65%;
+    margin: 0.8rem 0 0.8rem -75%;
   }
 
   .App-sub-menu>li,
@@ -251,7 +251,6 @@
 }
 
 
-@media all and (max-width: 425px) {}
 
 
 @media all and (min-width: 0px) and (max-width: 320px) {
