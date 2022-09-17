@@ -6,9 +6,12 @@
   user-select: none;
   transition: top 0.8s;
   box-sizing: border-box;
+  box-shadow: 0 0 0.05rem #e0e0e0;
   z-index: 9;
 }
-
+.App-header.active{
+  box-shadow: none;
+}
 /* 页面导航栏上拉显示下拉隐藏 */
 .App-header-hide {
   top: -0.6rem;
@@ -104,8 +107,8 @@
   margin-bottom: 0.05rem;
   border-radius: 0.1rem;
   border: 0.01rem solid transparent;
-  background: var(--nav-item-background);
-  background: var(--card)
+  background: var(--card);
+  user-select: none;
 }
 
 .App-sub-menu>li>span,

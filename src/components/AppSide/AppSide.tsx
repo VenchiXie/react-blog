@@ -9,9 +9,9 @@ import './AppSide.css'
 function AppSide() {
   const body = document.body
   // 主题变量
-  const themeModeRef = useRef<HTMLInputElement>(null)
+  const themeModeRef = useRef<HTMLDivElement>(null)
   // 主题名称
-  const themeNameRef = useRef<HTMLInputElement>(null)
+  const themeNameRef = useRef<HTMLParagraphElement>(null)
 
   // 主题模式的切换
   const handleThemeMode = () => {
@@ -46,7 +46,7 @@ function AppSide() {
   }, [])
 
   // 侧边功能类
-  const appSideRef = useRef<HTMLInputElement>(null)
+  const appSideRef = useRef<HTMLElement>(null)
   /**
    * 此函数的功能:
    * 1.当滚动的高度 < 20 时，则隐藏边侧小工具; 反之，当滚动的高度 > 20 时，则显示边侧小工具。
@@ -55,9 +55,9 @@ function AppSide() {
   const scrollTopListener = () => {
     const scrollTop = body.scrollTop || document.documentElement.scrollTop
     if (scrollTop < 20) {
-      appSideRef.current!.classList.remove('AppSide-active')
+      appSideRef.current?.classList.remove('AppSide-active')
     } else {
-      appSideRef.current!.classList.add('AppSide-active')
+      appSideRef.current?.classList.add('AppSide-active')
     }
   }
   // 启动监听

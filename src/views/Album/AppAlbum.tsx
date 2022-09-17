@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import AppFooter from '@/components/AppFooter/AppFooter'
 import AppLoading from '@/components/AppLoading/AppLoading'
 
@@ -6,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment ,incrementByAmount} from '@/store/slice/counterSlice'
 // import {} from ''
 import '@/styles/AppAlbum.css'
-import { useEffect } from 'react'
 
 /***
  * 相册页

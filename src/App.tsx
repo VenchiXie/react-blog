@@ -16,7 +16,7 @@ function App() {
     userAPI    
   },[])
   // 获取导航栏DOM
-  const headerRef = useRef<HTMLInputElement>(null)
+  const headerRef = useRef<HTMLElement>(null)
   // 记录滚动条的高度位置
   let oldScrollTop: number = document.documentElement.scrollTop || document.body.scrollTop
   /**
@@ -29,29 +29,27 @@ function App() {
     localStorage.setItem('scroll-top', JSON.stringify(currentScrollTop))
     // 获取导航栏的高度
     const headerHeight: number = headerRef.current?.offsetHeight as number
-    let headerBoxShadow:string = ''
 
     // 当前滚动条高度 > 导航栏的高度时
     if (currentScrollTop > headerHeight) {
-      headerBoxShadow = 'none'
       headerRef.current?.classList.add('App-header-hide')
     } else {
-      headerBoxShadow = '0 0 0.05rem #e0e0e0'
       headerRef.current?.classList.remove('App-header-hide')
     }
 
+
     // 当前滚动条高度 < 导航栏的高度时
     if (currentScrollTop < oldScrollTop) {
-      headerBoxShadow = '0 0 0.05rem #e0e0e0'
+      headerRef.current?.classList.remove('active')
       headerRef.current?.classList.remove('App-header-hide')
     }
 
     // 当前滚动条高度为0时去掉阴影
     if (currentScrollTop == 0) {
-      headerBoxShadow = 'none'
+      headerRef.current?.classList.add('active')
+      headerRef.current?.classList.remove('App-header-hide')
     }
     
-    headerRef.current!.style.boxShadow = headerBoxShadow
     // 重新赋值
     oldScrollTop = document.documentElement.scrollTop || document.body.scrollTop
   }
