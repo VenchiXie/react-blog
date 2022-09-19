@@ -9,14 +9,13 @@
   box-shadow: 0 0 0.05rem #e0e0e0;
   z-index: 9;
 }
-.App-header.active{
+.App-header.active {
   box-shadow: none;
 }
 /* 页面导航栏上拉显示下拉隐藏 */
 .App-header-hide {
   top: -0.6rem;
 }
-
 
 .App-Logo {
   font-size: 0.25rem;
@@ -25,13 +24,12 @@
   cursor: pointer;
 }
 
-
 .App-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 0.6rem;
-  padding: 0 0.30rem;
+  padding: 0 0.3rem;
   box-sizing: border-box;
 }
 
@@ -43,7 +41,7 @@
   list-style: none;
 }
 
-.App-menu>li {
+.App-menu > li {
   position: relative;
   margin: 0 0.2rem;
   height: 0.6rem;
@@ -57,11 +55,11 @@
   --ionicon-stroke-width: 60px;
 }
 
-.App-menu>li:hover>p {
+.App-menu > li:hover > p {
   color: var(--text-hover);
 }
 
-.App-menu>li>p::before {
+.App-menu > li > p::before {
   content: '';
   position: absolute;
   top: 0;
@@ -76,17 +74,15 @@
   transition: opacity 0.4s, transform 0.4s;
 }
 
-.App-menu>li:hover p::before {
+.App-menu > li:hover p::before {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1) translateY(-20%);
 }
 
-
-.App-menu>li:hover .App-sub-menu {
+.App-menu > li:hover .App-sub-menu {
   transform: translateY(0%);
 }
-
 
 .App-sub-menu {
   position: absolute;
@@ -96,8 +92,8 @@
   list-style: none;
 }
 
-.App-sub-menu>li,
-.App-sub-menu>a {
+.App-sub-menu > li,
+.App-sub-menu > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,23 +107,23 @@
   user-select: none;
 }
 
-.App-sub-menu>li>span,
-.App-sub-menu>a>span {
+.App-sub-menu > li > span,
+.App-sub-menu > a > span {
   margin: 0 0.04rem;
 }
 
-.App-sub-menu>li>span:nth-child(1),
-.App-sub-menu>a>span:nth-child(1) {
+.App-sub-menu > li > span:nth-child(1),
+.App-sub-menu > a > span:nth-child(1) {
   transform: translateY(2px);
 }
 
-.App-sub-menu>li>span:nth-child(3),
-.App-sub-menu>a>span:nth-child(3) {
+.App-sub-menu > li > span:nth-child(3),
+.App-sub-menu > a > span:nth-child(3) {
   display: none;
 }
 
-.App-sub-menu>li:hover,
-.App-sub-menu>a:hover {
+.App-sub-menu > li:hover,
+.App-sub-menu > a:hover {
   border: 0.01rem solid;
 }
 
@@ -135,23 +131,22 @@
   display: none;
 }
 
-.App-hamburger>span {
+.App-hamburger > span {
   display: block;
   width: 18px;
   height: 2px;
   margin: 4px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background: var(--hamburger)
+  background: var(--hamburger);
 }
-
 
 @media all and (max-width: 768px) {
   .App-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 60%;
+    width: 80%;
     height: 100%;
     text-align: center;
     transition: 0.3s;
@@ -166,10 +161,10 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 50%;
+    width: 25%;
     height: 100%;
     transition: 0.2s;
-    background: #09090ce8;
+    background: #09090cc9;
   }
 
   .App-menu.active {
@@ -199,76 +194,83 @@
     display: none;
   }
 
-  .App-menu>li {
+  .App-menu > li {
     left: 50%;
-    margin: 10% 0 35% 0%;
+    /* margin: 10% 0 35% 0%; */
+    margin: 50px 0 160px 0;
     width: 100%;
     text-align: left;
-    font-size: 15px !important;
+    font-size: 14px !important;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
   }
 
-  .App-menu>li>p {
+  .App-menu > li > p {
     margin: auto;
-    width: 77.5%;
+    width: 76%;
     color: var(--text-hover);
     font-size: 14px !important;
-    box-sizing: border-box;
   }
 
-  .App-menu>li:hover p::before {
+  .App-menu > li:hover p::before {
     transform: scale(0) translateY(10%);
   }
 
-  .App-menu>li:hover .App-sub-menu {
+  .App-menu > li:hover .App-sub-menu {
     transform: translateY(2.5%);
   }
 
   /* 去掉搜索 */
-  .App-menu>li:nth-child(1) {
+  .App-menu > li:nth-child(1) {
     display: none;
   }
 
   .App-sub-menu {
-    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     left: 5%;
-    transform: translateY(2.5%);
+    width: 90%;
+    height: 200px;
     border-radius: 0.25rem;
-    background: var(--card)
+    background: var(--card);
+    transform: translateY(2.5%);
+    overflow: hidden;
   }
 
-  .App-sub-menu>li,
-  .App-sub-menu>a {
-    margin: 1% auto;
+
+
+  .App-sub-menu > li,
+  .App-sub-menu > a {
+    flex: 1;
     width: 90%;
-    height: inherit;
     overflow: hidden;
     background: var(--card);
     border-radius: 0.25rem;
-    border: 0.00rem solid transparent;
+    border: 0rem solid transparent;
   }
 
-
-  .App-sub-menu>li>span:nth-child(1),
-  .App-sub-menu>a>span:nth-child(1) {
+  .App-sub-menu > li > span:nth-child(1),
+  .App-sub-menu > a > span:nth-child(1) {
     display: none;
   }
 
-  .App-sub-menu>li>span:nth-child(2),
-  .App-sub-menu>a>span:nth-child(2) {
+  .App-sub-menu > li > span:nth-child(2),
+  .App-sub-menu > a > span:nth-child(2) {
     display: inline-block;
     width: 90%;
   }
 
-  .App-sub-menu>li>span:nth-child(3),
-  .App-sub-menu>a>span:nth-child(3) {
+  .App-sub-menu > li > span:nth-child(3),
+  .App-sub-menu > a > span:nth-child(3) {
     display: inline-block;
+    color: var(--text-tags);
+    font-weight: bolder;
   }
 
-
-  .App-sub-menu>li:hover,
-  .App-sub-menu>a:hover {
+  .App-sub-menu > li:hover,
+  .App-sub-menu > a:hover {
     border: 0rem solid;
   }
 
@@ -277,14 +279,13 @@
   }
 }
 
-@media all and (max-width: 500px) {
-  .App-menu>li {
-    margin: 15% 0 35% 0%;
-    transform: translate(-50%, -50%);
+@media all and (max-width: 550px) {
+  .App-menu > li > p {
+    width: 77%;
   }
-
-  .App-sub-menu>li,
-  .App-sub-menu>a {
-    margin: 2% auto;
+}
+@media all and (max-width: 450px) {
+  .App-menu > li > p {
+    width: 77.5%;
   }
 }
