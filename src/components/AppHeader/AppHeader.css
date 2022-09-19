@@ -196,8 +196,7 @@
 
   .App-menu > li {
     left: 50%;
-    /* margin: 10% 0 35% 0%; */
-    margin: 50px 0 160px 0;
+    margin: 15px 0 180px 0;
     width: 100%;
     text-align: left;
     font-size: 14px !important;
@@ -232,7 +231,7 @@
     justify-content: space-evenly;
     left: 5%;
     width: 90%;
-    height: 200px;
+    height: 187px;
     border-radius: 0.25rem;
     background: var(--card);
     transform: translateY(2.5%);
