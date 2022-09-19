@@ -12,7 +12,6 @@ import './AppHeader.css'
  *  */
 function AppHeader(props:any) {
   const { onClickSearch } = props
-  console.log();
   const { author } = JSON.parse(localStorage.getItem('user') as string)
   const navigate     = useNavigate()
   const { pathname } = useLocation()
@@ -22,7 +21,8 @@ function AppHeader(props:any) {
   const subMenuItemRef = useRef<any>([])  // 子菜单数组
   // 导航跳转
   const onNavigate = (value: string) => {
-    if (pathname == value) return                   // 禁止多次点击相同的页
+    if (pathname === value) return                  // 禁止多次点击相同的页
+    if (value === '/') return navigate('/')         // 点击主页禁止下面效果  
     document.body.style.overflowY = 'auto'          // 允许滚动
     menuRef.current!.classList.toggle('active')     // 关闭菜单
     menuMaskRef.current.classList.toggle('active')  // 关闭菜单遮罩
