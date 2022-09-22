@@ -1,29 +1,26 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { IntroductionInfo, IntroductionGif } from './components'
 import AppFooter from '@/components/AppFooter/AppFooter'
 import AppLoading from '@/components/AppLoading/AppLoading'
 
-import { avatarAPI } from '@/api/avatarAPI'
 import '@/styles/AppIntroduction.css'
 
 /***
  * 个人简介页
  *  */
 function AppIntroduction() {
-  const [avatar, setAvatar] = useState(
-    () => localStorage.getItem('avatar') || avatarAPI
-  )
+  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user') as string) )
   return (
     <section className="Introduction">
       <article className="Introduction-main">
         <ul className="Introduction-ul">
           <li>
             {/* 用户信息 */}
-            <IntroductionInfo avatar={avatar}></IntroductionInfo>
+            <IntroductionInfo user={user}></IntroductionInfo>
           </li>
           <li>
-            {/* github */}
-            <AppLoading></AppLoading>
+            {/* github 提交记录*/}
+            <img src="https://ghchart.rshah.org/63e88e/LinXiuci" />
           </li>
           <li>
             {/* 招呼gif */}

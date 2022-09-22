@@ -16,14 +16,15 @@ const contacts = [
     icon: 'logo-octocat',
   },
 ]
-interface propsType {
-  avatar: string
+interface PropsType {
+  user: any
 }
 /***
  * 组件 - 用户信息
  *  */
-export const IntroductionInfo = (props: propsType) => {
-  const { avatar } = props
+export const IntroductionInfo = (props: PropsType) => {
+  const { user } = props
+  const { author, avatar } = user
   return (
     <nav className="Introduction-info">
       <div className="Introduction-info-header">
@@ -32,7 +33,7 @@ export const IntroductionInfo = (props: propsType) => {
         </div>
         <div className="Introduction-info-name">
           <p>你好，</p>
-          <p>林染同学！</p>
+          <p>{author}！</p>
         </div>
       </div>
       <div className="Introduction-info-mid">
@@ -45,7 +46,6 @@ export const IntroductionInfo = (props: propsType) => {
           </a>
         ))}
       </div>
-      <div className="Introduction-info-bottom"></div>
     </nav>
   )
 }
