@@ -1,4 +1,6 @@
 import AppIcon from '@/components/AppIcon/AppIcon'
+import AppSmallLoading from '@/components/AppLoading/AppSmallLoading'
+import type { IntroductionType } from '@/store/slice/introductionSlice'
 
 const contacts = [
   {
@@ -16,20 +18,18 @@ const contacts = [
     icon: 'logo-octocat',
   },
 ]
-interface PropsType {
-  user: any
-}
+
 /***
  * 组件 - 用户信息
  *  */
-export const IntroductionInfo = (props: PropsType) => {
-  const { user } = props
-  const { author, avatar } = user
+export const IntroductionInfo = (props: IntroductionType) => {
+  const { isLoaded,  datalist } = props
+  const { author, avatar } = datalist
   return (
     <nav className="Introduction-info">
       <div className="Introduction-info-header">
         <div className="Introduction-info-img">
-          <img src={avatar} />
+          {!isLoaded ? <AppSmallLoading/> : <img src={avatar} />}
         </div>
         <div className="Introduction-info-name">
           <p>你好，</p>

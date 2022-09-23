@@ -3,19 +3,33 @@ import { Outlet } from 'react-router-dom'
 import AppHeader from '@/components/AppHeader/AppHeader'
 import AppSearch from './components/AppSearch/AppSearcht'
 import AppSide from './components/AppSide/AppSide'
-import { userAPI } from '@/api/userAPI'
-import { getUser } from './api' 
-import useHttp from './hooks/useHttp'
 
+import { userAPI } from '@/api/userAPI'
+
+import type { RootState,AppDispatch } from '@/store'
+import { useSelector,useDispatch } from 'react-redux'
+import { getUser } from '@/store/slice/introductionSlice'
 import '@/styles/App.css'
+
 /**
  * 布局页
  *  */
 function App() {
 
+  const dispatch:AppDispatch = useDispatch()
+  const {isLoaded,error} = useSelector((state:RootState)=>state.introduction)
+
   useEffect(()=>{
+    let timer = setTimeout(()=>{
+      dispatch(getUser())     
     userAPI        
-  },[])
+
+    },300)
+    return ()=>{
+      clearTimeout(timer)
+    }
+  },[isLoaded]) 
+
   // 获取导航栏DOM
   const headerRef = useRef<HTMLElement>(null)
   // 记录滚动条的高度位置

@@ -1,7 +1,7 @@
 import './AppLoading.css'
 
 /**
- * 加载组件
+ * 页面类加载组件
  *  */
 function AppLoading() {
   return (

@@ -1,7 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
 import { IntroductionInfo, IntroductionGif } from './components'
 import AppFooter from '@/components/AppFooter/AppFooter'
-import AppLoading from '@/components/AppLoading/AppLoading'
+
+
+import type { RootState,AppDispatch } from '@/store'
+import { useSelector,useDispatch } from 'react-redux'
+import { getUser } from '@/store/slice/introductionSlice'
 
 import '@/styles/AppIntroduction.css'
 
@@ -10,13 +14,25 @@ import '@/styles/AppIntroduction.css'
  *  */
 function AppIntroduction() {
   const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user') as string) )
+
+  const dispatch:AppDispatch = useDispatch()
+  const {isLoaded,error} = useSelector((state:RootState)=>state.introduction)
+
+  useEffect(()=>{
+    let timer = setTimeout(()=>{
+      dispatch(getUser())      
+    },300)
+    return ()=>{
+      clearTimeout(timer)
+    }
+  },[isLoaded]) 
   return (
     <section className="Introduction">
       <article className="Introduction-main">
         <ul className="Introduction-ul">
           <li>
             {/* 用户信息 */}
-            <IntroductionInfo user={user}></IntroductionInfo>
+            <IntroductionInfo isLoaded={isLoaded} datalist={user}/>
           </li>
           <li>
             {/* github 提交记录*/}
