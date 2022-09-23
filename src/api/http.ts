@@ -11,8 +11,15 @@ http.interceptors.request.use((config) => {
 })
 
 http.interceptors.response.use(
-  (response) => {},
-  (error) => {}
+  (response) => {
+
+    return response
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
 )
+
+export default http
 
 

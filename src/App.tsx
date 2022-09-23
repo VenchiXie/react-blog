@@ -4,6 +4,8 @@ import AppHeader from '@/components/AppHeader/AppHeader'
 import AppSearch from './components/AppSearch/AppSearcht'
 import AppSide from './components/AppSide/AppSide'
 import { userAPI } from '@/api/userAPI'
+import { getUser } from './api' 
+import useHttp from './hooks/useHttp'
 
 import '@/styles/App.css'
 /**
@@ -11,9 +13,8 @@ import '@/styles/App.css'
  *  */
 function App() {
 
-
   useEffect(()=>{
-    userAPI    
+    userAPI        
   },[])
   // 获取导航栏DOM
   const headerRef = useRef<HTMLElement>(null)

@@ -1,22 +1,30 @@
 import { useState, useEffect } from 'react'
 
-function useHttp(axios: any) {
+export default function useHttp(fn: Function) {
   const [error, setError] = useState<any>(null)
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const [datalist, setDatalist] = useState<[]>([])
 
   const getDatalist = async () => {
-    let { data } = await axios
+    let { data } = await fn()
     setDatalist(data)
     setIsLoaded(true)
   }
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      getDatalist()
+      setIsLoaded(true)
+    }, 300)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
 
   useEffect(() => {
-    getDatalist(),
-      (err: any) => {
-        setIsLoaded(true)
-        setError(err)
-      }
+    ;(error: any) => {
+      setIsLoaded(true)
+      setError(error)
+    }
   }, [])
 
   return { error, isLoaded, datalist }
