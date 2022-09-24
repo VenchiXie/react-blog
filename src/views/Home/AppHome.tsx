@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
-import type { RootState } from '@/store'
 import { useSelector, useDispatch } from 'react-redux'
 import { onNext, onNextDot } from '@/store/slice/homeSlice'
+import type { RootState } from '@/store'
+
 import { IntroductionRender, IatestArticleRender } from './components'
 import { articlesAPI } from '@/api/articleAPI'
 import AppFooter from '@/components/AppFooter/AppFooter'
@@ -28,18 +29,9 @@ function AppHome() {
   }
 
   // 根据 dot 点击显示
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      currentDot.current.forEach((item: any, index: number) => {
-        item.onclick = () => {
-          dispatch(onNextDot(index))
-        }
-      })
-    }, 300)
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [])
+  const onNextDotDisplay = (index:number)=>{
+    dispatch(onNextDot(index))
+  }
 
   return (
     <section className="Home">
@@ -58,9 +50,9 @@ function AppHome() {
         {/* 个人介绍 */}
         <IntroductionRender
           index={index}
-          getDotAll={getDotAll}
           introduction={introduction}
           onNextDisplay={onNextDisplay}
+          onNextDotDisplay={onNextDotDisplay}
         />
       </main>
       <AppFooter></AppFooter>

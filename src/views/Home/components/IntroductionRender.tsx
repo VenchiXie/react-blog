@@ -4,13 +4,13 @@ interface PropsType {
   index: number
   introduction: any
   onNextDisplay: () => void
-  getDotAll: (dom: any) => void
+  onNextDotDisplay: (index: number) => void
 }
 /***
  * 个人介绍组件
  *  */
 export const IntroductionRender = (props: PropsType) => {
-  const { index, getDotAll, introduction, onNextDisplay } = props
+  const { index, introduction, onNextDisplay, onNextDotDisplay } = props
 
   return (
     <article className="Home-introduction">
@@ -38,7 +38,10 @@ export const IntroductionRender = (props: PropsType) => {
       {/* dot */}
       <nav className="Home-introduction-dot">
         {spans.map((item, i) => (
-          <span key={item.key} className={index == i ? 'active' : ''} ref={getDotAll}></span>
+          <span
+            key={item.key}
+            className={index == i ? 'active' : ''}
+            onClick={() => onNextDotDisplay(i)}></span>
         ))}
       </nav>
     </article>
