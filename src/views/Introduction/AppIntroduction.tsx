@@ -1,31 +1,18 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IntroductionInfo, IntroductionGif } from './components'
 import AppFooter from '@/components/AppFooter/AppFooter'
 
-
-import type { RootState,AppDispatch } from '@/store'
-import { useSelector,useDispatch } from 'react-redux'
-import { getUser } from '@/store/slice/introductionSlice'
-
+import type { RootState } from '@/store'
+import { useSelector } from 'react-redux'
 import '@/styles/AppIntroduction.css'
 
 /***
  * 个人简介页
  *  */
 function AppIntroduction() {
-  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user') as string) )
-
-  const dispatch:AppDispatch = useDispatch()
+  const user = JSON.parse(localStorage.getItem('user') as string) 
   const {isLoaded,error} = useSelector((state:RootState)=>state.introduction)
 
-  useEffect(()=>{
-    let timer = setTimeout(()=>{
-      dispatch(getUser())      
-    },300)
-    return ()=>{
-      clearTimeout(timer)
-    }
-  },[isLoaded]) 
   return (
     <section className="Introduction">
       <article className="Introduction-main">

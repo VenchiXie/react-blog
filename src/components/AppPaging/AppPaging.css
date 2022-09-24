@@ -26,7 +26,6 @@
   line-height: 0.35rem;
   border-radius: 50%;
   transition: 0.5s;
-  cursor: pointer;
 }
 
 .App-paging-pre:hover,

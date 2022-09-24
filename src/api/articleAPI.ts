@@ -10,7 +10,8 @@ export const articlesAPI = [
       'https://raw.githubusercontent.com/LinXiuci/image/main/img/40.jpeg',
     describe:
       '使用new命令时，它后面的函数依次执行下面的步骤：创建一个空对象，作为将要返回的实例对象。将这个空对象的原型，指向构造函数的prototype属性。将这个空对象赋值给函数内部的this关键字。开始执行构造函数内部的代码。如果构造函数内有返回值且为对象类型，则返回该对象，否则返回上面创建的实例对象。',
-    content: '使用new命令时，它后面的函数依次执行下面的步骤：创建一个空对象，作为将要返回的实例对象。将这个空对象的原型，指向构造函数的prototype属性。',
+    content:
+      '使用new命令时，它后面的函数依次执行下面的步骤：创建一个空对象，作为将要返回的实例对象。将这个空对象的原型，指向构造函数的prototype属性。',
   },
   {
     key: '3',
@@ -23,7 +24,8 @@ export const articlesAPI = [
       'https://raw.githubusercontent.com/LinXiuci/image/main/img/41.jpeg',
     describe:
       'MVVM模式，M即 model，数据模型；V即 view，视图；VM即 view-model，视图模型。 理解首先，数据Model通过Data Bindings把数据绑定在View视图上， 当View视图有交互（有改变）的时候，Dom listeners会自动监听，然后更新数据Model。当View视图有交互（有改变）的时候，Dom listeners会自动监听，然后更新数据Model。',
-    content: 'MVVM模式，M即 model，数据模型；V即 view，视图；VM即 view-model，视图模型。 理解首先，数据Model通过Data Bindings把数据绑定在View视图上，',
+    content:
+      'MVVM模式，M即 model，数据模型；V即 view，视图；VM即 view-model，视图模型。 理解首先，数据Model通过Data Bindings把数据绑定在View视图上，',
   },
   {
     key: '4',

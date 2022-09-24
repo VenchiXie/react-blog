@@ -10,7 +10,7 @@ export const ContentLatestArticle = (props: propsType) => {
   const { datalist, onNavigate } = props
   return (
     <nav className="Content-right-latest-article">
-      <header className="Content-right-header">图最近文章</header>
+      <header className="Content-right-header">最近文章</header>
       <ul className="Content-right-latest-article-ul">
         {/* 后期将截取 10 ~ 14 个内容渲染 */}
         {datalist.map((item) => (

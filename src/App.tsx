@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Outlet } from 'react-router-dom'
 import AppHeader from '@/components/AppHeader/AppHeader'
 import AppSearch from './components/AppSearch/AppSearcht'
 import AppSide from './components/AppSide/AppSide'
 
-import { userAPI } from '@/api/userAPI'
-
 import type { RootState,AppDispatch } from '@/store'
 import { useSelector,useDispatch } from 'react-redux'
 import { getUser } from '@/store/slice/introductionSlice'
+import { userAPI } from '@/api/userAPI'
 import '@/styles/App.css'
 
 /**
@@ -17,13 +16,12 @@ import '@/styles/App.css'
 function App() {
 
   const dispatch:AppDispatch = useDispatch()
-  const {isLoaded,error} = useSelector((state:RootState)=>state.introduction)
+  const { isLoaded } = useSelector((state:RootState)=>state.introduction)
 
   useEffect(()=>{
     let timer = setTimeout(()=>{
-      dispatch(getUser())     
-    userAPI        
-
+      dispatch(getUser()) 
+      userAPI      
     },300)
     return ()=>{
       clearTimeout(timer)

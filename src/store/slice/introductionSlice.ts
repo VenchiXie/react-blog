@@ -26,7 +26,7 @@ const initialState: IntroductionType = {
 }
 
 export const getUser = createAsyncThunk('introduction/getUser', async () => {
-  if (localStorage.getItem('user')) return localStorage.getItem('user')
+  if (localStorage.getItem('user') != null) return JSON.parse(localStorage.getItem('user') as string)
   const { data } = await getUserApi()
   return data
 })
@@ -37,16 +37,16 @@ const introductionSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder.addCase(getUser.pending, () => {
-      console.log('🚀 ~ 进行中！')
+      // console.log('🚀 ~ 进行中！')
     })
     builder.addCase(getUser.fulfilled, (state, { payload }) => {
-      console.log('🚀 ~ 成功')
+      // console.log('🚀 ~ 成功')
       state.isLoaded = true
       state.datalist = payload
       localStorage.setItem('user', JSON.stringify(state.datalist))
     })
     builder.addCase(getUser.rejected, (state, error: any) => {
-      console.log('🚀 ~ 失败')
+      // console.log('🚀 ~ 失败')
       state.isLoaded = true
       state.error = error.message
     })

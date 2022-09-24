@@ -10,13 +10,13 @@ import './AppHeader.css'
  * 导航栏
  *  */
 function AppHeader(props: any) {
-  const { author } = JSON.parse(localStorage.getItem('user') as string)
+  const { author } = JSON.parse(localStorage.getItem('user') as string) 
   const { onClickSearch } = props
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const menuRef = useRef<HTMLUListElement>(null) // 菜单
-  const menuMaskRef = useRef<HTMLElement>(null)  // 菜单遮罩
-  const hamburgerRef = useRef<HTMLElement>(null) // 显示菜单按钮
+  const menuRef      = useRef<HTMLUListElement>(null)  // 菜单
+  const menuMaskRef  = useRef<HTMLElement>(null)       // 菜单遮罩
+  const hamburgerRef = useRef<HTMLElement>(null)       // 显示菜单按钮
   // 导航跳转
   const onNavigate = (value: string) => {
     if (pathname === value) return         // 禁止多次点击相同的页

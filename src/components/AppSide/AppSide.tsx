@@ -37,7 +37,7 @@ function AppSide() {
     return () => {
       clearTimeout(timer)
     }
-  }, [themeModeRef.current, themeNameRef.current])
+  }, [])
 
   useEffect(() => {
     return () => {

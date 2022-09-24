@@ -9,7 +9,7 @@ export const ContentFile = (props: propsType) => {
   return (
     <nav className="Content-right-file">
       <header className="Content-right-header">
-        <span>图归档</span>
+        <span>归档</span>
         <span>&gt;</span>
       </header>
       <ul className="Content-right-file-ul">

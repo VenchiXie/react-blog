@@ -1,6 +1,6 @@
 import AppIcon from '@/components/AppIcon/AppIcon'
 
-interface propsType {
+interface PropsType {
   tags: {
     isTop: boolean
     start_time: string
@@ -11,7 +11,7 @@ interface propsType {
 /***
  * tags 组件
  *  */
-export const ContentArticleTags = (props: propsType) => {
+export const ContentArticleTags = (props: PropsType) => {
   const { tags } = props
 
   const elements = [

@@ -118,6 +118,11 @@
   border-radius: 0.15rem;
   overflow: hidden;
 }
+.Content-articles-item-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .Content-top-right,
 .Content-articles-item-right {
