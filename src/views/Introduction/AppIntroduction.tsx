@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { IntroductionInfo, IntroductionGif } from './components'
 import AppFooter from '@/components/AppFooter/AppFooter'
 

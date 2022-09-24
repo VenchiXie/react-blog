@@ -4,7 +4,7 @@ import { onNext, onNextDot } from '@/store/slice/homeSlice'
 import type { RootState } from '@/store'
 
 import { IntroductionRender, IatestArticleRender } from './components'
-import { articlesAPI } from '@/api/articleApi'
+import { articleApi } from '@/api/articleApi'
 import AppFooter from '@/components/AppFooter/AppFooter'
 import '@/styles/AppHome.css'
 
@@ -46,7 +46,7 @@ function AppHome() {
           <span>染</span>
         </article>
         {/* 最新文章 */}
-        <IatestArticleRender datalist={articlesAPI}></IatestArticleRender>
+        <IatestArticleRender datalist={articleApi}></IatestArticleRender>
         {/* 个人介绍 */}
         <IntroductionRender
           index={index}

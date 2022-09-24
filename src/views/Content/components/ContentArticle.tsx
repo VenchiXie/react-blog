@@ -4,15 +4,15 @@ import AppSmallLoading from '@/components/AppLoading/AppSmallLoading'
 interface PropsType {
   isLoaded: boolean
   datalist: {
-    key: string | number
-    title: string
-    isTop: boolean
+    key       : string | number
+    title     : string
+    isTop     : boolean
     start_time: string
     count_time: string
-    tags: string
-    title_img: string
-    describe: string
-    content: string
+    tags      : string
+    title_img : string
+    describe  : string
+    content   : string
   }[]
   onNavigate: (value: string) => void
 }
