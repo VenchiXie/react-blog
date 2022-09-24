@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  ContentTop,
   ContentArticle,
   ContentSaysay,
   ContentLatestArticle,
@@ -16,8 +15,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getArticle } from '@/store/slice/contentSlice'
 
 import { tagAPI } from '@/api/tagAPI'
-import { articlesAPI } from '@/api/articleAPI'
-import { articlesTopAPI } from '@/api/articlesTopAPI'
+import { articleApi } from '@/api/articleApi'
 import '@/styles/AppContent.css'
 
 const paging: any = {
@@ -31,8 +29,8 @@ const paging: any = {
 function AppContent() {
   const navigate = useNavigate()
   const onNavigate = (value: string) => {
-    // navigate(value)
-    alert('无权访问,请联系博主')
+    // navigate(`/articles/detailed?key=${value}`)
+    alert('访问权限已关闭！' + '[/articles/detailed?key=?&title=' + value + ']')
   }
 
   const { isLoaded, data } = useSelector((state: RootState) => state.content)
@@ -42,7 +40,6 @@ function AppContent() {
     let timer = setTimeout(() => {
       dispatch(getArticle())
       update()
-      console.log(isLoaded)
     }, 300)
     return () => {
       clearTimeout(timer)
@@ -52,57 +49,47 @@ function AppContent() {
   /**
    * 根据上下页点击页数的变化而变化
    *  */
-  // const update = () => {
-  //   // 设置总页数
-  //   paging.totalPage = Math.ceil(articlesAPI.length / paging.pageSize || 1)
-  //   let before = (paging.current - 1) * paging.pageSize
-  //   let after = paging.current * paging.pageSize
-  //   // 分割内容
-  //   setDatalist(articlesAPI.slice(before, after))
-  // }
   const update = () => {
     // 设置总页数
-    paging.totalPage = Math.ceil(data.length / paging.pageSize || 1)
+    paging.totalPage = Math.ceil(articleApi.length / paging.pageSize || 1)
     let before = (paging.current - 1) * paging.pageSize
     let after = paging.current * paging.pageSize
     // 分割内容
-    setDatalist(data.slice(before, after))
+    setDatalist(articleApi.slice(before, after))
   }
+  // const update = () => {
+  //   // 设置总页数
+  //   paging.totalPage = Math.ceil(data.length / paging.pageSize || 1)
+  //   let before = (paging.current - 1) * paging.pageSize
+  //   let after = paging.current * paging.pageSize
+  //   // 分割内容
+  //   setDatalist(data.slice(before, after))
+  // }
   return (
     <section className="Content">
       <main className="Content-main">
-        <article className="Content-left">
-          {/* 置顶标题文章 */}
-          <ContentTop
-            datalist={articlesTopAPI}
-            onNavigate={onNavigate}></ContentTop>
 
+        {/* 主要内容 */}
+        <section className="Content-left">
           {/* 文章列表 */}
-          <ContentArticle
-            isLoaded={isLoaded}
-            datalist={datalist}
-            onNavigate={onNavigate}
-          />
-
+          <ContentArticle isLoaded={isLoaded} datalist={datalist} onNavigate={onNavigate}/>
           {/* 分页 */}
           <AppPaging paging={paging} update={update}></AppPaging>
-        </article>
+        </section>
+        
         {/* 侧边信息 */}
-        <article className="Content-right">
+        <section className="Content-right">
           {/* 说说 */}
           <ContentSaysay></ContentSaysay>
           {/* 最近文章 */}
-          <ContentLatestArticle
-            datalist={articlesAPI}
-            onNavigate={onNavigate}
-          />
+          <ContentLatestArticle datalist={articleApi} onNavigate={onNavigate} />
 
           {/* 标签 */}
           <ContentTags datalist={tagAPI} onNavigate={onNavigate}></ContentTags>
 
           {/* 归档 */}
           <ContentFile onNavigate={onNavigate}></ContentFile>
-        </article>
+        </section>
       </main>
       <AppFooter></AppFooter>
     </section>

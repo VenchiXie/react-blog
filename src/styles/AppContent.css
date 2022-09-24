@@ -1,5 +1,4 @@
 .Content {
-  width: 100%;
   height: 100%;
 }
 
@@ -8,153 +7,122 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  max-width: 14.00rem;
+  max-width: 14rem;
   min-height: 100%;
-  height: auto;
 }
 
-.Content-left {
+.Content-left,
+.Content-right {
   position: relative;
   margin-top: 12%;
+}
+.Content-left {
   width: 75%;
   min-height: 100%;
 }
 
 .Content-right {
-  position: relative;
-  margin-top: 12%;
-  width: 25%;
   margin-left: 0.15rem;
+  width: 25%;
   min-height: 100%;
 }
 
-.Content-top,
-.Content-articles>li {
+/* ------------- 文章置顶区 ------------- */
+.Content-article-top {
   width: 100%;
-  margin-bottom: 0.3rem;
+  height: 4rem;
   border-radius: 0.15rem;
   background: var(--card-item);
 }
 
-.Content-top:hover,
-.Content-articles>li:hover {
+.Content-article-top:hover {
   transition: 1s;
   box-shadow: 0 0 0.15rem var(--text-hover);
 }
 
-
-.Content-top {
+.Content-article-top,
+.Content-article-list {
   margin-bottom: 0.3rem;
   display: flex;
-  height: 4rem;
   border-radius: 0.15rem;
   background: var(--card-item);
   user-select: none;
 }
 
-.Content-top .Content-top-left,
-.Content-top-right {
+/* 文章列表项的左右布局 */
+.Content-article-left,
+.Content-article-right {
   width: 50%;
   border-radius: 0.15rem;
   overflow: hidden;
 }
 
+/* ------------- 文章列表项的左区域 ------------- */
+
 /* 文章列表标题的背景图片 */
-.Content-top-article-img,
-.Content-articles-item-img {
+.Content-article-img {
   width: 100%;
   height: 100%;
   border-radius: 0.15rem;
   transition: 1s;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
-
-
-.Content-top:hover .Content-top-article-img,
-.Content-articles>li:hover .Content-articles-item-img {
+/* 图片绽放 */
+.Content-article-top:hover .Content-article-img,
+.Content-article-list:hover .Content-article-img {
   transform: scale(1.2);
 }
 
-
-/* tags */
-.Content-top-article-tags {
+/* ------------- tags区 ------------- */
+.Content-article-tags {
   padding-top: 0.1rem;
   width: 100%;
   font-size: 0.15rem;
   line-height: 1.5;
 }
 
-.Content-top-article-tags>p {
+.Content-article-tags > p {
   display: inline;
   margin-right: 0.05rem;
   color: var(--text-tags);
 }
 
-.Content-top-article-tags ion-icon {
+/* 是否置顶,显此图标 */
+.Content-article-tags ion-icon {
   transform: translateY(15%);
 }
 
-.Content-top-article-tags .Content-article-istop {
+.Content-article-tags .Content-article-istop {
   color: orange;
 }
 
-/* 文章内容简介 */
-.Content-articles {
-  list-style: none;
-  user-select: none;
+/* ------------- 文章列表项的右区域 ------------- */
+.Content-article-right {
+  padding: 0.1rem 0.2rem;
 }
-
-.Content-articles>li {
-  display: flex;
-}
-
-.Content-articles-item-left,
-.Content-articles-item-right {
-  width: 50%;
-  transition: 1s;
-  border-radius: 0.15rem;
-  overflow: hidden;
-}
-.Content-articles-item-left{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Content-top-right,
-.Content-articles-item-right {
-  padding: 0.1rem 0.20rem;
-}
-
-.Content-top-title,
-.Content-articles-title {
-  font-size: 0.30rem;
+.Content-article-title {
+  font-size: 0.3rem;
   font-weight: 600;
   line-height: 1.2;
   text-align: justify;
+  transition: 0.5s;
   padding: 0.05rem 0;
 }
 
-.Content-article-describe,
-.Content-top-article-describe {
+.Content-article-title:hover {
+  color: var(--text-hover);
+}
+
+/* 文章内容简介 */
+.Content-article-describe {
   padding-top: 0.1rem;
   font-size: 0.17rem;
   font-weight: 550;
   line-height: 1.6;
   text-align: justify;
-  letter-spacing: 1.6px;
-}
-
-
-
-/* ------------------ 侧边信息 ------------------ */
-.Content-right-saysay>ul,
-.Content-right-latest-article>ul,
-.Content-right-file>ul {
-  list-style: none;
 }
 
 /* 说说 、最近文章 、标签 、归档*/
@@ -174,7 +142,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.20rem;
+  font-size: 0.2rem;
   font-weight: 660;
 }
 
@@ -186,8 +154,8 @@
   box-shadow: 0 0 0.15rem var(--text-hover);
 }
 
-.Content-right-saysay-ul>li,
-.Content-right-latest-article-ul>li {
+.Content-right-saysay-ul > li,
+.Content-right-latest-article-ul > li {
   margin-bottom: 0.15rem;
   padding: 0rem 0.1rem;
   transition: 1s;
@@ -201,20 +169,16 @@
   height: 3.6rem;
 }
 
-
 /* 最近文章 */
 .Content-right-latest-article {
   line-height: 1.5;
 }
 
-
-
-.Content-right-latest-article-ul>li:hover {
+.Content-right-latest-article-ul > li:hover {
   color: var(--text-hover);
-  cursor: pointer;
 }
 
-.Content-right-latest-article-ul>li>p {
+.Content-right-latest-article-ul > li > p {
   font-size: 0.14rem;
 }
 
@@ -224,28 +188,28 @@
   flex-wrap: wrap;
 }
 
-.Content-right-tags>span {
+.Content-right-tags > span {
   margin: 0 0.1rem;
   line-height: 1.7;
   transition: 0.5s;
   color: var(--text-tags);
 }
 
-.Content-right-tags>span:nth-of-type(even) {
+.Content-right-tags > span:nth-of-type(even) {
   font-size: 0.22rem;
   font-weight: 660;
   color: #99a9bf;
   transition: 0.5s;
 }
 
-.Content-right-tags>span:hover {
+.Content-right-tags > span:hover {
   color: var(--text-hover);
   transform: scale(1.2);
   cursor: pointer;
 }
 
 /* 归档  */
-.Content-right-file-ul>li {
+.Content-right-file-ul > li {
   margin-bottom: 0.1rem;
   padding: 0.05rem 0.1rem;
   display: flex;
@@ -255,14 +219,19 @@
   border-radius: 0.05rem;
 }
 
-.Content-right-file-ul>li:hover {
+.Content-right-file-ul > li:hover {
   background: var(--text-hover);
   padding: 0.05rem 0.2rem;
 }
 
-
-.Content-right-header>span:nth-child(2) {
+.Content-right-header > span:nth-child(2) {
   cursor: pointer;
+}
+/* ------------- 侧边信息区域 ------------- */
+.Content-right-saysay > ul,
+.Content-right-latest-article > ul,
+.Content-right-file > ul {
+  list-style: none;
 }
 
 @media all and (max-width: 1400px) {

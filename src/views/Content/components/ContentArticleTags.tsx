@@ -33,7 +33,7 @@ export const ContentArticleTags = (props: PropsType) => {
   ]
 
   return (
-    <div className="Content-top-article-tags">
+    <div className="Content-article-tags">
       {tags.isTop ? (
         <span className="Content-article-istop">
           <AppIcon name="star-half-outline" size="small"></AppIcon>

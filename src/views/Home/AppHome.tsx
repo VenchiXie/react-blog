@@ -4,7 +4,7 @@ import { onNext, onNextDot } from '@/store/slice/homeSlice'
 import type { RootState } from '@/store'
 
 import { IntroductionRender, IatestArticleRender } from './components'
-import { articlesAPI } from '@/api/articleAPI'
+import { articlesAPI } from '@/api/articleApi'
 import AppFooter from '@/components/AppFooter/AppFooter'
 import '@/styles/AppHome.css'
 

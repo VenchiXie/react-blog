@@ -1,11 +1,11 @@
 /***
- * 标签 组件
+ * 组件 - 标签 
  *  */
-interface propsType {
+interface PropsType {
   datalist: string[]
   onNavigate: (value: string) => void
 }
-export const ContentTags = (props: propsType) => {
+export const ContentTags = (props: PropsType) => {
   const { datalist, onNavigate } = props
   return (
     <nav className="Content-right-tags">

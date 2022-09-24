@@ -1,4 +1,4 @@
-interface propsType {
+interface PropsType {
   datalist: {
     key: string
     title: string
@@ -6,7 +6,10 @@ interface propsType {
   }[]
   onNavigate: (value: string) => void
 }
-export const ContentLatestArticle = (props: propsType) => {
+/***
+ * 组件 - 最近文章
+ *  */ 
+export const ContentLatestArticle = (props: PropsType) => {
   const { datalist, onNavigate } = props
   return (
     <nav className="Content-right-latest-article">

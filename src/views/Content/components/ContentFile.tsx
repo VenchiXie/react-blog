@@ -1,10 +1,10 @@
 /***
  * 归档 组件
  *  */
-interface propsType {
+interface PropsType {
   onNavigate: (value: string) => void
 }
-export const ContentFile = (props: propsType) => {
+export const ContentFile = (props: PropsType) => {
   const { onNavigate } = props
   return (
     <nav className="Content-right-file">

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { articlesAPI } from '@/api/articleAPI'
+import { articleApi } from '@/api/articleApi'
 import './AppSearch.css'
 
 /***
@@ -9,7 +9,7 @@ import './AppSearch.css'
 function AppSearch(props: any) {
   const { searchRef, onCloseSearch } = props
   const navigate = useNavigate()
-  const [datalist, setDataList]             = useState<any>([...articlesAPI])  // 文章数据列表
+  const [datalist, setDataList]             = useState<any>([...articleApi])  // 文章数据列表
   const [filterDatalist, setFilterDatalist] = useState<any>([])                // 渲染数据列表
 
   /**
