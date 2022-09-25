@@ -15,7 +15,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getArticle } from '@/store/slice/contentSlice'
 
 import { tagAPI } from '@/api/tagAPI'
-import { articleApi } from '@/api/articleApi'
+import { articleApi } from '@/api/article'
 import '@/styles/AppContent.css'
 
 const paging: any = {
