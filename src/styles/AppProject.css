@@ -146,7 +146,8 @@
 .Project-more-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 3.2rem);
+  /* grid-template-rows: repeat(2, 3.2rem); */
+  grid-template-rows: auto;
   grid-gap: 0.2rem;
 }
 
@@ -198,9 +199,11 @@
 
 /* 项目信息 */
 .Project-more-item-info {
-  position: relative;
-  top: 7.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0 0.15rem;
+  height: 1.2rem;
 }
 
 .Project-more-item-info>p {
@@ -222,6 +225,12 @@
     width: 96%;
     margin: auto;
   }
+
+  /* 主体内容 */
+  .Project-more-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media all and (max-width: 414px) {}
