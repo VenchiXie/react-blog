@@ -3,20 +3,20 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { getArticleApi } from '@/api'
 
 export interface ContentType {
-  pageSize: number
+  pageSize : number
   totalPage: number
-  current: number
-  isLoaded: boolean
-  data: {
-    key: string | number
-    title: string
-    isTop: false
+  current  : number
+  isLoaded : boolean
+  data     : {
+    key       : string | number
+    title     : string
+    isTop     : false
     start_time: string
     count_time: string
-    tags: string
-    title_img: string
-    describe: string
-    content: string
+    tags      : string
+    cover_img : string
+    describe  : string
+    content   : string
   }[]
 }
 
@@ -32,6 +32,7 @@ const initialState: ContentType = {
 export const getArticle = createAsyncThunk('content/getArticle', async () => {
   if (localStorage.getItem('articles') != null)
     return JSON.parse(localStorage.getItem('articles') as string)
+    
   let { data } = await getArticleApi()
   return data
 })

@@ -90,6 +90,7 @@
 }
 
 .Home-latest-article-img {
+  position: relative;
   width: 1.15rem;
   height: 0.95rem;
   border-radius: 0.15rem;

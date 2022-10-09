@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { IntroductionInfo, IntroductionGif } from './components'
+import AppSmallLoading from '@/components/AppLoading/AppSmallLoading'
 import AppFooter from '@/components/AppFooter/AppFooter'
 
 import type { RootState } from '@/store'
@@ -10,33 +11,33 @@ import '@/styles/AppIntroduction.css'
  * 个人简介页
  *  */
 function AppIntroduction() {
-  const user = JSON.parse(localStorage.getItem('user') as string) 
+  const user             = JSON.parse(localStorage.getItem('user') as string)
   const {isLoaded,error} = useSelector((state:RootState)=>state.introduction)
 
   return (
     <section className="Introduction">
       <article className="Introduction-main">
         <ul className="Introduction-ul">
-          <li>
             {/* 用户信息 */}
+          <li>
             <IntroductionInfo isLoaded={isLoaded} datalist={user}/>
           </li>
-          <li>
             {/* github 提交记录*/}
+          <li>
             <img src="https://ghchart.rshah.org/63e88e/LinXiuci" />
           </li>
-          <li>
             {/* 招呼gif */}
+          <li>
             <IntroductionGif></IntroductionGif>
           </li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
+          <li><AppSmallLoading/></li>
+          <li><AppSmallLoading/></li>
+          <li><AppSmallLoading/></li>
         </ul>
         <ul className="Introduction-ul">
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
+          <li><AppSmallLoading/></li>
+          <li><AppSmallLoading/></li>
+          <li><AppSmallLoading/></li>
         </ul>
       </article>
       <AppFooter></AppFooter>

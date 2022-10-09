@@ -52,6 +52,7 @@
 /* 文章列表项的左右布局 */
 .Content-article-left,
 .Content-article-right {
+  position: relative;
   width: 50%;
   border-radius: 0.15rem;
   overflow: hidden;

@@ -1,6 +1,6 @@
 export const userAPI = {
   author: '林染同学',
-  avatar: 'https://raw.githubusercontent.com/LinXiuci/image/main/img/logo.jpg',
+  avatar: 'https://cloudbase-baas-4gxsv7qqddb1ffdd-1309232359.tcloudbaseapp.com/logo.jpg',
   introduction: [
     {
       key: '1',

@@ -10,7 +10,7 @@ interface PropsType {
     start_time: string
     count_time: string
     tags      : string
-    title_img : string
+    cover_img : string
     describe  : string
     content   : string
   }[]
@@ -51,7 +51,7 @@ interface ItemType {
     start_time: string
     count_time: string
     tags      : string
-    title_img : string
+    cover_img : string
     describe  : string
     content   : string
   }
@@ -71,7 +71,7 @@ const ArticleListRender = (props: ItemType) => {
           <AppSmallLoading />
         ) : (
           <div
-            style={{ backgroundImage: `URL(${item.title_img})` }}
+            style={{ backgroundImage: `URL(${item.cover_img})` }}
             className="Content-article-img"></div>
         )}
       </div>

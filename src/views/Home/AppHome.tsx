@@ -14,14 +14,7 @@ import '@/styles/AppHome.css'
 function AppHome() {
   const dispatch = useDispatch()
   const { index } = useSelector((state: RootState) => state.home)
-
-  const currentDot = useRef<any>([])
   const { introduction } = JSON.parse(localStorage.getItem('user') as string)
-
-  // 获取所有有 dot
-  const getDotAll = (dom: any) => {
-    currentDot.current.push(dom)
-  }
 
   // 下一个 next 显示
   const onNextDisplay = () => {
