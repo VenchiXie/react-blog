@@ -20,8 +20,7 @@ const initialState: ProjectType = {
 };
 
 export const getProject = createAsyncThunk("project/getProject", async () => {
-  if (localStorage.getItem("projects") != null)
-    return JSON.parse(localStorage.getItem("projects") as string);
+  if (localStorage.getItem("projects") != null) return JSON.parse(localStorage.getItem("projects") as string);
 
   let { data } = await getProjectApi();
   return data;

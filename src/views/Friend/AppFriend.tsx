@@ -1,10 +1,10 @@
-import AppFooter from '@/components/AppFooter/AppFooter'
-import AppLoading from '@/components/AppLoading/AppLoading'
-import '@/styles/AppFriend.css'
+import AppFooter from "@/components/AppFooter/AppFooter";
+import AppLoading from "@/components/AppLoading/AppLoading";
+import "@/styles/AppFriend.css";
 
 /***
  * 个人项目页
- *  */ 
+ *  */
 function AppFriend() {
   return (
     <section className="Friend">
@@ -14,7 +14,7 @@ function AppFriend() {
       </article>
       <AppFooter></AppFooter>
     </section>
-  )
+  );
 }
 
-export default AppFriend
+export default AppFriend;

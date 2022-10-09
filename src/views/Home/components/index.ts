@@ -1,4 +1,4 @@
-import { IntroductionRender } from './IntroductionRender'
-import { IatestArticleRender } from './IatestArticle'
+import { IntroductionRender } from "./IntroductionRender";
+import { IatestArticleRender } from "./IatestArticle";
 
-export { IntroductionRender, IatestArticleRender }
+export { IntroductionRender, IatestArticleRender };

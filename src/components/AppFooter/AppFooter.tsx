@@ -67,9 +67,7 @@ const AppSubstrRender = (props: PropsType) => {
         <li key={index}>
           {item.href ? (
             <a href={item.href} target="_blank">
-              {item.name.length > 6
-                ? item.name.substring(0, 5) + "..."
-                : item.name}
+              {item.name.length > 6 ? item.name.substring(0, 5) + "..." : item.name}
             </a>
           ) : (
             <p onClick={() => onNavigate(item.path as string)}>{item.name}</p>

@@ -1,16 +1,16 @@
-const spans = [{ key: '1' }, { key: '2' }, { key: '3' }, { key: '4' }]
+const spans = [{ key: "1" }, { key: "2" }, { key: "3" }, { key: "4" }];
 
 interface PropsType {
-  index: number
-  introduction: any
-  onNextDisplay: () => void
-  onNextDotDisplay: (index: number) => void
+  index: number;
+  introduction: any;
+  onNextDisplay: () => void;
+  onNextDotDisplay: (index: number) => void;
 }
 /***
  * 个人介绍组件
  *  */
 export const IntroductionRender = (props: PropsType) => {
-  const { index, introduction, onNextDisplay, onNextDotDisplay } = props
+  const { index, introduction, onNextDisplay, onNextDotDisplay } = props;
 
   return (
     <article className="Home-introduction">
@@ -18,7 +18,7 @@ export const IntroductionRender = (props: PropsType) => {
       <nav className="Home-introduction-text">
         <ul className="Home-introduction-ul">
           {introduction.map((item: any, i: number) => (
-            <li key={item.key} className={index == i ? 'active' : ''}>
+            <li key={item.key} className={index == i ? "active" : ""}>
               {item.text}
             </li>
           ))}
@@ -26,7 +26,7 @@ export const IntroductionRender = (props: PropsType) => {
         {/* info-next */}
         <div className="Home-introduction-index">
           {introduction.map((item: any, i: number) => (
-            <span key={item.key} className={index == i ? 'active' : ''}>
+            <span key={item.key} className={index == i ? "active" : ""}>
               0{item.key} - {item.name}
             </span>
           ))}
@@ -38,12 +38,9 @@ export const IntroductionRender = (props: PropsType) => {
       {/* dot */}
       <nav className="Home-introduction-dot">
         {spans.map((item, i) => (
-          <span
-            key={item.key}
-            className={index == i ? 'active' : ''}
-            onClick={() => onNextDotDisplay(i)}></span>
+          <span key={item.key} className={index == i ? "active" : ""} onClick={() => onNextDotDisplay(i)}></span>
         ))}
       </nav>
     </article>
-  )
-}
+  );
+};

@@ -3,7 +3,7 @@
  *  */
 export const tabs = [
   {
-    key:1,
+    key: 1,
     name: "导航",
     sub_tab: [
       { name: "博客", path: "/app_content" },
@@ -14,7 +14,7 @@ export const tabs = [
     ],
   },
   {
-    key:2,
+    key: 2,
     name: "标签",
     sub_tab: [
       { name: "技术杂谈", path: "/app_technology" },
@@ -24,7 +24,7 @@ export const tabs = [
   },
 
   {
-    key:3,
+    key: 3,
     name: "笔记",
     sub_tab: [
       { name: "语雀", href: "https://www.yuque.com/dashboard" },
@@ -32,7 +32,7 @@ export const tabs = [
     ],
   },
   {
-    key:4,
+    key: 4,
     name: "社区",
     sub_tab: [
       { name: "知乎", href: "https://www.zhihu.com/" },
@@ -40,7 +40,7 @@ export const tabs = [
     ],
   },
   {
-    key:5,
+    key: 5,
     name: "友链",
     sub_tab: [
       { name: "loading", href: "友链1" },
@@ -51,7 +51,7 @@ export const tabs = [
     ],
   },
   {
-    key:6,
+    key: 6,
     name: "关于本站",
     sub_tab: [
       { name: "关于主题", path: "友链1" },

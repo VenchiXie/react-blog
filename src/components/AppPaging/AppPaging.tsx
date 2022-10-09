@@ -1,38 +1,38 @@
 import { setBackToTop } from "@/utils/back-to-top";
-import './AppPaging.css'
+import "./AppPaging.css";
 /***
  * 公共组件 - 分页
  *  */
 interface propsType {
   paging: {
-    pageSize: number
-    totalPage: number
-    current: number
-  }
-  update: () => void
+    pageSize : number;
+    totalPage: number;
+    current  : number;
+  };
+  update: () => void;
 }
 function AppPaging(props: propsType) {
-  const { paging, update } = props
+  const { paging, update } = props;
 
   // 下一页
   const onNextPage = () => {
     // current 大于等于总页时，结束下一页
-    if (paging.current >= paging.totalPage) return
-    paging.current++
-    update()        // 重新渲染
-    setBackToTop(0) // 置顶
-    localStorage.setItem('current', JSON.stringify(paging.current))
-  }
+    if (paging.current >= paging.totalPage) return;
+    paging.current++;
+    update(); // 重新渲染
+    setBackToTop(0); // 置顶
+    localStorage.setItem("current", JSON.stringify(paging.current));
+  };
 
   // 上一页
   const onPrePage = () => {
     // 页数为 1 时 结束上一页
-    if (paging.current <= 1) return
-    paging.current--
-    update()        // 重新渲染  
-    setBackToTop(0) // 置顶
-    localStorage.setItem('current', JSON.stringify(paging.current))
-  }
+    if (paging.current <= 1) return;
+    paging.current--;
+    update(); // 重新渲染
+    setBackToTop(0); // 置顶
+    localStorage.setItem("current", JSON.stringify(paging.current));
+  };
 
   return (
     <section className="App-paging">
@@ -47,7 +47,7 @@ function AppPaging(props: propsType) {
         &gt;
       </div>
     </section>
-  )
+  );
 }
 
-export default AppPaging
+export default AppPaging;

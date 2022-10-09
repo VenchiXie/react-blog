@@ -1,24 +1,18 @@
-import { useEffect } from 'react'
-import AppFooter from '@/components/AppFooter/AppFooter'
-import AppLoading from '@/components/AppLoading/AppLoading'
+import { useEffect } from "react";
+import AppFooter from "@/components/AppFooter/AppFooter";
+import AppLoading from "@/components/AppLoading/AppLoading";
 
-import type { RootState } from '@/store'
-import { useSelector, useDispatch } from 'react-redux'
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-} from '@/store/slice/counterSlice'
-// import {} from ''
-import '@/styles/AppAlbum.css'
+import type { RootState } from "@/store";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment, incrementByAmount } from "@/store/slice/counterSlice";
+import "@/styles/AppAlbum.css";
 
 /***
  * 相册页
  *  */
 function AppAlbum() {
-  const count = useSelector((state: RootState) => state.counter.value)
-  const dispatch = useDispatch()
-
+  const count = useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch();
 
   return (
     <section className="Album">
@@ -32,7 +26,7 @@ function AppAlbum() {
       </article>
       <AppFooter></AppFooter>
     </section>
-  )
+  );
 }
 
-export default AppAlbum
+export default AppAlbum;

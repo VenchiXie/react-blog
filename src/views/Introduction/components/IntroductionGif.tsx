@@ -11,5 +11,5 @@ export const IntroductionGif = () => {
         />
       </a>
     </nav>
-  )
-}
+  );
+};

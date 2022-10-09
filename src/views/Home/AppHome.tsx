@@ -1,30 +1,30 @@
-import { useEffect, useRef } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { onNext, onNextDot } from '@/store/slice/homeSlice'
-import type { RootState } from '@/store'
+import { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { onNext, onNextDot } from "@/store/slice/homeSlice";
+import type { RootState } from "@/store";
 
-import { IntroductionRender, IatestArticleRender } from './components'
-import { articleApi } from '@/api/article'
-import AppFooter from '@/components/AppFooter/AppFooter'
-import '@/styles/AppHome.css'
+import { IntroductionRender, IatestArticleRender } from "./components";
+import { articleApi } from "@/api/article";
+import AppFooter from "@/components/AppFooter/AppFooter";
+import "@/styles/AppHome.css";
 
 /**
  * 首页
  *  */
 function AppHome() {
-  const dispatch = useDispatch()
-  const { index } = useSelector((state: RootState) => state.home)
-  const { introduction } = JSON.parse(localStorage.getItem('user') as string)
+  const dispatch = useDispatch();
+  const { index } = useSelector((state: RootState) => state.home);
+  const { introduction } = JSON.parse(localStorage.getItem("user") as string);
 
   // 下一个 next 显示
   const onNextDisplay = () => {
-    dispatch(onNext(introduction.length - 1))
-  }
+    dispatch(onNext(introduction.length - 1));
+  };
 
   // 根据 dot 点击显示
-  const onNextDotDisplay = (index:number)=>{
-    dispatch(onNextDot(index))
-  }
+  const onNextDotDisplay = (index: number) => {
+    dispatch(onNextDot(index));
+  };
 
   return (
     <section className="Home">
@@ -41,16 +41,11 @@ function AppHome() {
         {/* 最新文章 */}
         <IatestArticleRender datalist={articleApi}></IatestArticleRender>
         {/* 个人介绍 */}
-        <IntroductionRender
-          index={index}
-          introduction={introduction}
-          onNextDisplay={onNextDisplay}
-          onNextDotDisplay={onNextDotDisplay}
-        />
+        <IntroductionRender index={index} introduction={introduction} onNextDisplay={onNextDisplay} onNextDotDisplay={onNextDotDisplay} />
       </main>
       <AppFooter></AppFooter>
     </section>
-  )
+  );
 }
 
-export default AppHome
+export default AppHome;

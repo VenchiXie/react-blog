@@ -4,12 +4,12 @@ import { getUserApi } from '@/api'
 
 export interface IntroductionType {
   isLoaded: boolean
-  error?: any
+  error?  : any
   datalist: {
-    author: string
-    avatar: string
+    author      : string
+    avatar      : string
     introduction: {
-      key: string
+      key : string
       name: string
       text: string
     }[]
@@ -17,10 +17,10 @@ export interface IntroductionType {
 }
 const initialState: IntroductionType = {
   isLoaded: false,
-  error: undefined,
+  error   : undefined,
   datalist: {
-    author: '',
-    avatar: '',
+    author      : '',
+    avatar      : '',
     introduction: [],
   },
 }

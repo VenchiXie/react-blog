@@ -1,4 +1,4 @@
-import './AppLoading.css'
+import "./AppLoading.css";
 
 /**
  * 页面类加载组件
@@ -16,7 +16,7 @@ function AppLoading() {
         <span></span>
       </div>
     </section>
-  )
+  );
 }
 
-export default AppLoading
+export default AppLoading;

@@ -1,12 +1,12 @@
 /***
- * 组件 - 标签 
+ * 组件 - 标签
  *  */
 interface PropsType {
-  datalist: string[]
-  onNavigate: (value: string) => void
+  datalist: string[];
+  onNavigate: (value: string) => void;
 }
 export const ContentTags = (props: PropsType) => {
-  const { datalist, onNavigate } = props
+  const { datalist, onNavigate } = props;
   return (
     <nav className="Content-right-tags">
       {datalist.map((item) => (
@@ -15,5 +15,5 @@ export const ContentTags = (props: PropsType) => {
         </span>
       ))}
     </nav>
-  )
-}
+  );
+};

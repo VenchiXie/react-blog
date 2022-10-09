@@ -1,10 +1,10 @@
-import AppFooter from '@/components/AppFooter/AppFooter'
-import AppLoading from '@/components/AppLoading/AppLoading'
-import '@/styles/AppFootmark.css'
+import AppFooter from "@/components/AppFooter/AppFooter";
+import AppLoading from "@/components/AppLoading/AppLoading";
+import "@/styles/AppFootmark.css";
 
 /***
  * 足迹页
- *  */ 
+ *  */
 function AppFootmark() {
   return (
     <section className="Footmark">
@@ -14,7 +14,7 @@ function AppFootmark() {
       </article>
       <AppFooter></AppFooter>
     </section>
-  )
+  );
 }
 
-export default AppFootmark
+export default AppFootmark;

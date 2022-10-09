@@ -1,23 +1,23 @@
-import { Suspense, lazy } from 'react'
-import { BrowserRouter, HashRouter , Routes, Route } from 'react-router-dom'
-import AppLoading from '@/components/AppLoading/AppLoading'
+import { Suspense, lazy } from "react";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
+import AppLoading from "@/components/AppLoading/AppLoading";
 
-const App         = lazy(() => import('@/App'))
-const AppHome     = lazy(() => import('@/views/Home/AppHome'))
+const App     = lazy(() => import("@/App"));
+const AppHome = lazy(() => import("@/views/Home/AppHome"));
 /* 博客栏 */
-const AppContent  = lazy(() => import('@/views/Content/AppContent'))
-const AppFiling   = lazy(() => import('@/views/Filing/AppFiling'))
+const AppContent = lazy(() => import("@/views/Content/AppContent"));
+const AppFiling  = lazy(() => import("@/views/Filing/AppFiling"));
 /* 影音栏 */
-const AppAlbum    = lazy(() => import('@/views/Album/AppAlbum'))
-const AppFootmark = lazy(() => import('@/views/Footmark/AppFootmark'))
-const AppWuPin    = lazy(() => import('@/views/WuPin/AppWuPin'))
+const AppAlbum    = lazy(() => import("@/views/Album/AppAlbum"));
+const AppFootmark = lazy(() => import("@/views/Footmark/AppFootmark"));
+const AppWuPin    = lazy(() => import("@/views/WuPin/AppWuPin"));
 /* 作者栏 */
-const AppIntroduction = lazy(() => import('@/views/Introduction/AppIntroduction'))
-const AppProject      = lazy(() => import('@/views/Project/AppProject'))
-const AppFriend       = lazy(() => import("@/views/Friend/AppFriend"))
+const AppIntroduction = lazy(() => import("@/views/Introduction/AppIntroduction"));
+const AppProject      = lazy(() => import("@/views/Project/AppProject"));
+const AppFriend       = lazy(() => import("@/views/Friend/AppFriend"));
 
 /* 404  */
-const Exception404    = lazy(() => import('@/views/Exception/Exception404'))
+const Exception404 = lazy(() => import("@/views/Exception/Exception404"));
 
 function AppRouter() {
   return (
@@ -27,8 +27,8 @@ function AppRouter() {
           <Route path="/" element={<App />}>
             <Route index element={<AppHome />}></Route>
             {/* 博客栏 */}
-            <Route path = "app_content"  element = {<AppContent />}></Route>
-            <Route path = "app_filing"   element = {<AppFiling />}></Route>
+            <Route path = "app_content" element = {<AppContent />}></Route>
+            <Route path = "app_filing"  element = {<AppFiling />}></Route>
             {/* 影音栏 */}
             <Route path = "app_album"    element = {<AppAlbum />}></Route>
             <Route path = "app_footmark" element = {<AppFootmark />}></Route>
@@ -42,7 +42,7 @@ function AppRouter() {
         </Routes>
       </HashRouter>
     </Suspense>
-  )
+  );
 }
 
-export default AppRouter
+export default AppRouter;

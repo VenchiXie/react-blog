@@ -24,13 +24,11 @@ const contacts = [
  *  */
 export const IntroductionInfo = (props: IntroductionType) => {
   const { isLoaded, datalist } = props;
-  const { author, avatar }     = datalist;
+  const { author, avatar } = datalist;
   return (
     <nav className="Introduction-info">
       <div className="Introduction-info-header">
-        <div className="Introduction-info-img">
-          {!isLoaded ? <AppSmallLoading /> : <img src={avatar} />}
-        </div>
+        <div className="Introduction-info-img">{!isLoaded ? <AppSmallLoading /> : <img src={avatar} />}</div>
         <div className="Introduction-info-name">
           <p>你好，</p>
           <p>{author}！</p>

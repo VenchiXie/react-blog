@@ -4,11 +4,11 @@
  * @param delay (number) 延迟执行毫秒数
  */
 export function debounce(fn: Function, delay: number) {
-  let timer: number | null | undefined = null
+  let timer: number | null | undefined = null;
   return function () {
     if (timer != null) {
-      clearTimeout(timer)
+      clearTimeout(timer);
     }
-    timer = setTimeout(fn, delay)
-  }
+    timer = setTimeout(fn, delay);
+  };
 }

@@ -28,15 +28,9 @@ export const IatestArticleRender = (props: propsType) => {
       <ul className="Home-latest-article-ul">
         {latestArticle.map((item) => (
           <li key={item.key} onClick={() => onNavigate(item.key + item.title)}>
-            <div className="Home-latest-article-content">
-              {item.describe.substring(0, 25) + "..."}
-            </div>
+            <div className="Home-latest-article-content">{item.describe.substring(0, 25) + "..."}</div>
             <div className="Home-latest-article-img">
-              {item.cover_img ? (
-                <div style={{ backgroundImage: `URL(${item.cover_img})`}} ></div>
-                ) : (
-                <AppSmallLoading></AppSmallLoading>
-              )}
+              {item.cover_img ? <div style={{ backgroundImage: `URL(${item.cover_img})` }}></div> : <AppSmallLoading></AppSmallLoading>}
             </div>
           </li>
         ))}
