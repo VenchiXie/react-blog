@@ -1,34 +1,112 @@
-import AppFooter from '@/components/AppFooter/AppFooter'
-import AppLoading from '@/components/AppLoading/AppLoading'
-import '@/styles/AppProject.css'
-import { useRef, useState } from 'react'
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AppSmallLoading from "@/components/AppLoading/AppSmallLoading";
+import AppFooter from "@/components/AppFooter/AppFooter";
+
+import type { RootState, AppDispatch } from "@/store";
+import { useSelector, useDispatch } from "react-redux";
+import { getProject } from "@/store/slice/projectSlice";
+
+import { projectAPI, moreProjects } from "@/api/projectAPI";
+import "@/styles/AppProject.css";
 
 /***
  * 个人项目页
  *  */
 function AppProject() {
-  const div = useRef<HTMLDivElement>(null)
-  const [number, setNumber] = useState<number>(10)
-  const onRotate = () => {
-    if (number <= 0) {
-      div.current?.classList.remove('active')
-      return alert('没有次数了')
-    }
-    setNumber((value) => value - 1)
-    div.current?.classList.toggle('active')
-  }
+  const navigate = useNavigate();
+  const onNavigate = (value: string) => {
+    // navigate(`/projects/detailed?key=${value}`)
+    alert(
+      "访问权限已关闭！" + "[/projects/detailed?key=?&title=" + value + "]"
+    );
+  };
+
+  const { isLoaded, data } = useSelector((state: RootState) => state.project);
+  const dispatch: AppDispatch = useDispatch();
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      dispatch(getProject());
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isLoaded]);
   return (
     <section className="Project">
-      <article className="Project-main">
-        <h1>AppProject page</h1>
-        <AppLoading></AppLoading>
-        <div className="Project-div" ref={div} onClick={onRotate}>
-          {number}
-        </div>
-      </article>
+      <main className="Project-main">
+        {/* 横幅 */}
+        <section className="Project-banner">
+          {projectAPI.map((item) => (
+            <article className="Project-banner-item" key={item.key}>
+              {isLoaded ? (
+                <div style={{ backgroundImage: `URL(${item.cover_img})` }}></div>
+              ) : (
+                <AppSmallLoading></AppSmallLoading>
+              )}
+
+              <div className="Project-banner-item-info">
+                {/* tags */}
+                <p className="Project-banner-item-tags">
+                  <span>项目</span>
+                  {item.tags.map((tag, index) => (
+                    <span key={index}>{tag}</span>
+                  ))}
+                </p>
+                {/* 标题长度截取 */}
+                {item.title.length > 25 ? (
+                  <p className="Project-banner-item-title" onClick={() => onNavigate(item.title)}>
+                    {item.title.substring(0, 25) + "..."}
+                  </p>
+                ) : (
+                  <p className="Project-banner-item-title" onClick={() => onNavigate(item.title)}>
+                    {item.title}
+                  </p>
+                )}
+                {/* time */}
+                <span className="Project-banner-item-time">
+                  {item.create_time}
+                </span>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        {/* More Project */}
+        <section className="Project-more">
+          <nav className="Project-more-nav">
+            <aside className="Project-more-nav-left">More Projects</aside>
+            <aside className="Project-more-nav-right">
+              <div>所有项目</div>
+              <div>应用开发</div>
+              <div>其它项目</div>
+            </aside>
+          </nav>
+          {/* 内容 */}
+          <article className="Project-more-container">
+            {moreProjects.map((item) => (
+              <nav className="Project-more-item" key={item.key}>
+                {isLoaded ? (
+                  <div style={{ backgroundImage: `URL(${item.cover_img})` }}>
+                    {item.tags.map((tag, index) => (
+                      <span key={index}>{tag}</span>
+                    ))}
+                  </div>
+                ) : (
+                  <AppSmallLoading></AppSmallLoading>
+                )}
+                <div className="Project-more-item-info">
+                  <p onClick={() => onNavigate(item.title)}>{item.title}</p>
+                  <span>{item.create_time}</span>
+                </div>
+              </nav>
+            ))}
+          </article>
+        </section>
+      </main>
       <AppFooter></AppFooter>
     </section>
-  )
+  );
 }
 
-export default AppProject
+export default AppProject;

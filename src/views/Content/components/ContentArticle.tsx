@@ -67,12 +67,12 @@ const ArticleListRender = (props: ItemType) => {
     <>
       {/* 左区域 */}
       <div className="Content-article-left" onClick={()=>onNavigate(item.title)}>
-        {!isLoaded ? (
-          <AppSmallLoading />
-        ) : (
+        {isLoaded ? (
           <div
-            style={{ backgroundImage: `URL(${item.cover_img})` }}
-            className="Content-article-img"></div>
+          style={{ backgroundImage: `URL(${item.cover_img})` }}
+          className="Content-article-img"></div>
+          ) : (
+          <AppSmallLoading />
         )}
       </div>
       {/* 右区域 */}

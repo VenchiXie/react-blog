@@ -3,12 +3,14 @@ import counterSlice from './slice/counterSlice'
 import homeSlice from './slice/homeSlice'
 import introductionSlice from './slice/introductionSlice'
 import contentSlice from './slice/contentSlice'
+import projectSlice from './slice/projectSlice'
 const store = configureStore({
   reducer: {
     home        : homeSlice,
     counter     : counterSlice,
     introduction: introductionSlice,
-    content     : contentSlice
+    content     : contentSlice,
+    project     : projectSlice,
   },
 })
 

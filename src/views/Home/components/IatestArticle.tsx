@@ -7,10 +7,10 @@ import AppSmallLoading from "@/components/AppLoading/AppSmallLoading";
  *  */
 interface propsType {
   datalist: {
-    key: string;
-    title: string;
+    key      : string;
+    title    : string;
     cover_img: string;
-    describe: string;
+    describe : string;
   }[];
 }
 export const IatestArticleRender = (props: propsType) => {
