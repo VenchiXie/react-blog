@@ -60,7 +60,7 @@ export const moreProjects = [
     key: 3,
     title: "食用指南",
     cover_img:
-      "https://raw.githubusercontent.com/Uzizkp/jscdn/main/blog/img/blob-scene-haikei%20(7).svg",
+      "https://img-1253324855.cos.ap-chengdu.myqcloud.com/picgo/20210716201821.JPG",
     tags: ["前端", "其他项目"],
     create_time: "xxxx-xx-30",
     updata_time: "",

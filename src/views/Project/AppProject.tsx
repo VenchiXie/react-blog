@@ -17,9 +17,7 @@ function AppProject() {
   const navigate = useNavigate();
   const onNavigate = (value: string) => {
     // navigate(`/projects/detailed?key=${value}`)
-    alert(
-      "访问权限已关闭！" + "[/projects/detailed?key=?&title=" + value + "]"
-    );
+    alert("访问权限已关闭！" + "[/projects/detailed?key=?&title=" + value + "]");
   };
 
   const { isLoaded, data } = useSelector((state: RootState) => state.project);
@@ -39,12 +37,7 @@ function AppProject() {
         <section className="Project-banner">
           {projectAPI.map((item) => (
             <article className="Project-banner-item" key={item.key}>
-              {isLoaded ? (
-                <div style={{ backgroundImage: `URL(${item.cover_img})` }}></div>
-              ) : (
-                <AppSmallLoading></AppSmallLoading>
-              )}
-
+              {isLoaded ? <div style={{ backgroundImage: `URL(${item.cover_img})` }}></div> : <AppSmallLoading></AppSmallLoading>}
               <div className="Project-banner-item-info">
                 {/* tags */}
                 <p className="Project-banner-item-tags">
@@ -64,9 +57,7 @@ function AppProject() {
                   </p>
                 )}
                 {/* time */}
-                <span className="Project-banner-item-time">
-                  {item.create_time}
-                </span>
+                <span className="Project-banner-item-time">{item.create_time}</span>
               </div>
             </article>
           ))}
@@ -86,15 +77,22 @@ function AppProject() {
           <article className="Project-more-container">
             {moreProjects.map((item) => (
               <nav className="Project-more-item" key={item.key}>
-                {isLoaded ? (
-                  <div style={{ backgroundImage: `URL(${item.cover_img})` }}>
-                    {item.tags.map((tag, index) => (
-                      <span key={index}>{tag}</span>
-                    ))}
-                  </div>
-                ) : (
-                  <AppSmallLoading></AppSmallLoading>
-                )}
+                {/* 封面图片 */}
+                <div className="Project-modre-item-cover">
+                  {isLoaded ? (
+                    <>
+                      <div style={{ backgroundImage: `URL(${item.cover_img})` }}></div>
+                      {item.tags.map((tag, index) => (
+                        <span className="Project-modre-item-tags" key={index}>
+                          {tag}
+                        </span>
+                      ))}
+                    </>
+                  ) : (
+                    <AppSmallLoading></AppSmallLoading>
+                  )}
+                </div>
+                {/* 项目信息 */}
                 <div className="Project-more-item-info">
                   <p onClick={() => onNavigate(item.title)}>{item.title}</p>
                   <span>{item.create_time}</span>

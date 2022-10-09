@@ -104,9 +104,10 @@
 /* ------------------  更多项目  -------------------- */
 /* .Project-more {
 } */
-.Project-more-nav{
+.Project-more-nav {
   margin: 0.5rem auto;
 }
+
 .Project-more-nav,
 .Project-more-nav-right {
   display: flex;
@@ -153,7 +154,6 @@
   position: relative;
   border-radius: 0.15rem;
   transition: 0.5s;
-  overflow: hidden;
 }
 
 .Project-more-item:hover {
@@ -161,9 +161,16 @@
 }
 
 
-.Project-more-item>div:nth-child(1) {
+/* 封面图片 */
+.Project-modre-item-cover {
   position: relative;
   height: 2rem;
+  overflow: hidden;
+  border-radius: 0.15rem;
+}
+
+.Project-modre-item-cover>div {
+  height: inherit;
   border-radius: 0.15rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -171,11 +178,12 @@
   transition: 1s;
 }
 
-.Project-more-item:hover>div:nth-child(1) {
+
+.Project-modre-item-cover:hover div {
   transform: scale(1.2);
 }
 
-.Project-more-item>div:nth-child(1) span {
+.Project-modre-item-cover .Project-modre-item-tags {
   position: absolute;
   left: 3%;
   bottom: 15%;
@@ -187,10 +195,11 @@
   border-radius: 0.08rem;
 }
 
+
 /* 项目信息 */
 .Project-more-item-info {
   position: relative;
-  top: 6%;
+  top: 7.5%;
   padding: 0 0.15rem;
 }
 
