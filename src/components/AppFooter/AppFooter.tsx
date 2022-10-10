@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { tabs } from "@/utils/tabs";
-import { setBackToTop } from "@/utils/back-to-top";
+import { setBackToTop } from "@/utils/backToTop";
 import "./AppFooter.css";
 import { useLocation, useNavigate } from "react-router-dom";
 

@@ -3,7 +3,7 @@ export const articleApi = [
     key: '1',
     title: '我做了一个手写春联小网页，祝大家虎年暴富',
     isTop: true,
-    start_time: 'xxxx-01-30',
+    create_time: 'xxxx-01-30',
     count_time: 'xxx',
     tags: '技术',
     cover_img:
@@ -16,7 +16,7 @@ export const articleApi = [
     key: '2',
     title: 'new命令原理',
     isTop: false,
-    start_time: 'xxxx-09-10',
+    create_time: 'xxxx-09-10',
     count_time: 'x',
     tags: '技术',
     cover_img:
@@ -30,7 +30,7 @@ export const articleApi = [
     key: '3',
     title: 'MVVM模式',
     isTop: false,
-    start_time: 'xxxx-08-06',
+    create_time: 'xxxx-08-06',
     count_time: 'xx',
     tags: '技术',
     cover_img:
@@ -44,7 +44,7 @@ export const articleApi = [
     key: '4',
     title: '防抖与节流函数',
     isTop: false,
-    start_time: 'xxxx-09-10',
+    create_time: 'xxxx-09-10',
     count_time: 'xx',
     tags: '技术',
     cover_img:
@@ -58,7 +58,7 @@ export const articleApi = [
     key: '5',
     title: 'vue双向绑定原理及实现',
     isTop: false,
-    start_time: 'xxxx-07-10',
+    create_time: 'xxxx-07-10',
     count_time: 'xx',
     tags: '技术',
     cover_img:

@@ -1,4 +1,4 @@
-export const tagAPI = [
+export const tagApi = [
   'C',
   'C++',
   'Java',

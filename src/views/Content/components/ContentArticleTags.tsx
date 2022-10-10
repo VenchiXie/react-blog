@@ -2,10 +2,10 @@ import AppIcon from "@/components/AppIcon/AppIcon";
 
 interface PropsType {
   tags: {
-    isTop: boolean;
-    start_time: string;
+    isTop     : boolean;
+    create_time: string;
     count_time: string;
-    tags: string;
+    tags      : string;
   };
 }
 /***
@@ -17,17 +17,14 @@ export const ContentArticleTags = (props: PropsType) => {
   const elements = [
     {
       key: "1",
-      icon: "calendar-outline",
-      tab: <span>发表于&nbsp;{tags.start_time}&nbsp;</span>,
+      tab: <span>发表于&nbsp;{tags.create_time}&nbsp;</span>,
     },
     {
       key: "2",
-      icon: "brush-outline",
       tab: <span>更新于&nbsp;{tags.count_time}&nbsp;天前&nbsp;</span>,
     },
     {
       key: "3",
-      icon: "cube-outline",
       tab: <span>类型&nbsp;&gt;&nbsp;{tags.tags}&nbsp;</span>,
     },
   ];

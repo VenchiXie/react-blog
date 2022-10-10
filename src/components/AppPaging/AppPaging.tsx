@@ -1,4 +1,4 @@
-import { setBackToTop } from "@/utils/back-to-top";
+import { setBackToTop } from "@/utils/backToTop";
 import "./AppPaging.css";
 /***
  * 公共组件 - 分页

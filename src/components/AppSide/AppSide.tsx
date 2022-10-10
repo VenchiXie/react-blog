@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { setBackToTop } from "@/utils/back-to-top";
+import { setBackToTop } from "@/utils/backToTop";
 import { debounce } from "@/utils/debounce";
 import "./AppSide.css";
 

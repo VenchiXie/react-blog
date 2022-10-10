@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { articleApi } from "@/api/article";
+import { articleApi } from "@/api/articleApi";
 import "./AppSearch.css";
 
 /***

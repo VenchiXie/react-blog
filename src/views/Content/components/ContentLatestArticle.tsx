@@ -2,7 +2,7 @@ interface PropsType {
   datalist: {
     key       : string;
     title     : string;
-    start_time: string;
+    create_time: string;
   }[];
   onNavigate: (value: string) => void;
 }
@@ -19,7 +19,7 @@ export const ContentLatestArticle = (props: PropsType) => {
         {datalist.map((item) => (
           <li key={item.key} onClick={() => onNavigate(item.key + item.title)}>
             <h4>{item.title.length > 20 ? item.title.substring(0, 20) + "..." : item.title}</h4>
-            <p>{item.start_time}</p>
+            <p>{item.create_time}</p>
           </li>
         ))}
       </ul>

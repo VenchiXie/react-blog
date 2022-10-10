@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
 import { Outlet } from "react-router-dom";
 import AppHeader from "@/components/AppHeader/AppHeader";
-import AppSearch from "./components/AppSearch/AppSearcht";
-import AppSide from "./components/AppSide/AppSide";
+import AppSearch from "@/components/AppSearch/AppSearcht";
+import AppSide from "@/components/AppSide/AppSide";
 
 import type { RootState, AppDispatch } from "@/store";
 import { useSelector, useDispatch } from "react-redux";
 import { getUser } from "@/store/slice/introductionSlice";
-import { userAPI } from "@/api/userAPI";
+import { userApi } from "@/api/userApi";
 import "@/styles/App.css";
 
 /**
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     let timer = setTimeout(() => {
       dispatch(getUser());
-      userAPI;
+      userApi;
     }, 300);
     return () => {
       clearTimeout(timer);

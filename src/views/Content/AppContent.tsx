@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContentArticle, ContentSaysay, ContentLatestArticle, ContentTags, ContentFile } from "./components/index";
+import { ContentArticle, ContentSaysay, ContentLatestArticle, ContentTags, ContentFile } from "./components";
 import AppPaging from "@/components/AppPaging/AppPaging";
 import AppFooter from "@/components/AppFooter/AppFooter";
 
@@ -8,14 +8,14 @@ import type { RootState, AppDispatch } from "@/store";
 import { useSelector, useDispatch } from "react-redux";
 import { getArticle } from "@/store/slice/contentSlice";
 
-import { tagAPI } from "@/api/tagAPI";
-import { articleApi } from "@/api/article";
+import { tagApi } from "@/api/tagApi";
+import { articleApi } from "@/api/articleApi";
 import "@/styles/AppContent.css";
 
 const paging: any = {
-  current  : Number(localStorage.getItem("current")) || 1,   // 当前的页码
-  pageSize : 3,                                              // 每一页要显示的数据条数
-  totalPage: 0,                                              // 总页数
+  current: Number(localStorage.getItem("current")) || 1, // 当前的页码
+  pageSize : 3,   // 每一页要显示的数据条数
+  totalPage: 0,   // 总页数
 };
 /***
  * 内容页
@@ -27,8 +27,8 @@ function AppContent() {
     alert("访问权限已关闭！" + "[/articles/detailed?key=?&title=" + value + "]");
   };
 
-  const { isLoaded, data } = useSelector((state: RootState) => state.content);
   const dispatch: AppDispatch = useDispatch();
+  const { isLoaded, data } = useSelector((state: RootState) => state.content);
   const [datalist, setDatalist] = useState<any>([]); // 文章数据列表
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -79,7 +79,7 @@ function AppContent() {
           <ContentLatestArticle datalist={articleApi} onNavigate={onNavigate}></ContentLatestArticle>
 
           {/* 标签 */}
-          <ContentTags datalist={tagAPI} onNavigate={onNavigate}></ContentTags>
+          <ContentTags datalist={tagApi} onNavigate={onNavigate}></ContentTags>
 
           {/* 归档 */}
           <ContentFile onNavigate={onNavigate}></ContentFile>

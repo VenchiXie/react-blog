@@ -4,15 +4,15 @@ import AppSmallLoading from "@/components/AppLoading/AppSmallLoading";
 interface PropsType {
   isLoaded: boolean;
   datalist: {
-    key       : string | number;
-    title     : string;
-    isTop     : boolean;
-    start_time: string;
-    count_time: string;
-    tags      : string;
-    cover_img : string;
-    describe  : string;
-    content   : string;
+    key        : string | number;
+    title      : string;
+    isTop      : boolean;
+    create_time: string;
+    count_time : string;
+    tags       : string;
+    cover_img  : string;
+    describe   : string;
+    content    : string;
   }[];
   onNavigate: (value: string) => void;
 }
@@ -44,15 +44,15 @@ export const ContentArticle = (props: PropsType) => {
 interface ItemType {
   isLoaded: boolean;
   item    : {
-    key       : string | number;
-    title     : string;
-    isTop     : boolean;
-    start_time: string;
-    count_time: string;
-    tags      : string;
-    cover_img : string;
-    describe  : string;
-    content   : string;
+    key        : string | number;
+    title      : string;
+    isTop      : boolean;
+    create_time: string;
+    count_time : string;
+    tags       : string;
+    cover_img  : string;
+    describe   : string;
+    content    : string;
   };
   onNavigate: (value: string) => void;
 }

@@ -7,7 +7,7 @@ import type { RootState, AppDispatch } from "@/store";
 import { useSelector, useDispatch } from "react-redux";
 import { getProject } from "@/store/slice/projectSlice";
 
-import { projectAPI, moreProjects } from "@/api/projectAPI";
+import { projectApi, moreProjectApi } from "@/api/projectApi";
 import "@/styles/AppProject.css";
 
 /***
@@ -35,7 +35,7 @@ function AppProject() {
       <main className="Project-main">
         {/* 横幅 */}
         <section className="Project-banner">
-          {projectAPI.map((item) => (
+          {projectApi.map((item) => (
             <article className="Project-banner-item" key={item.key}>
               {isLoaded ? <div style={{ backgroundImage: `URL(${item.cover_img})` }}></div> : <AppSmallLoading></AppSmallLoading>}
               <div className="Project-banner-item-info">
@@ -71,11 +71,12 @@ function AppProject() {
               <div>所有项目</div>
               <div>应用开发</div>
               <div>其它项目</div>
+              
             </aside>
           </nav>
           {/* 内容 */}
           <article className="Project-more-container">
-            {moreProjects.map((item) => (
+            {moreProjectApi.map((item) => (
               <nav className="Project-more-item" key={item.key}>
                 {/* 封面图片 */}
                 <div className="Project-modre-item-cover">
