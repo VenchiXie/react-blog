@@ -9,4 +9,7 @@ const getArticleApi = async () => http.get("http://localhost:8888/articles");
 // 获取 banner 项目
 const getProjectApi = async () => http.get("http://localhost:8888/projects");
 
-export { getUserApi, getArticleApi, getProjectApi };
+// 获取所有标签
+const getAllTagsApi = async () => http.get("http://localhost:8888/tags");
+
+export { getUserApi, getArticleApi, getProjectApi, getAllTagsApi };

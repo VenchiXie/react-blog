@@ -4,15 +4,15 @@ import AppSmallLoading from "@/components/AppLoading/AppSmallLoading";
 interface PropsType {
   isLoaded: boolean;
   datalist: {
-    key        : string | number;
-    title      : string;
-    isTop      : boolean;
+    key: string | number;
+    title: string;
+    isTop: boolean;
     create_time: string;
-    count_time : string;
-    tags       : string;
-    cover_img  : string;
-    describe   : string;
-    content    : string;
+    count_time: string;
+    tags: string;
+    cover_img: string;
+    describe: string;
+    content: string;
   }[];
   onNavigate: (value: string) => void;
 }
@@ -43,16 +43,16 @@ export const ContentArticle = (props: PropsType) => {
 
 interface ItemType {
   isLoaded: boolean;
-  item    : {
-    key        : string | number;
-    title      : string;
-    isTop      : boolean;
+  item: {
+    key: string | number;
+    title: string;
+    isTop: boolean;
     create_time: string;
-    count_time : string;
-    tags       : string;
-    cover_img  : string;
-    describe   : string;
-    content    : string;
+    count_time: string;
+    tags: string;
+    cover_img: string;
+    describe: string;
+    content: string;
   };
   onNavigate: (value: string) => void;
 }
@@ -66,7 +66,11 @@ const ArticleListRender = (props: ItemType) => {
     <>
       {/* 左区域 */}
       <div className="Content-article-left" onClick={() => onNavigate(item.title)}>
-        {isLoaded ? <div style={{ backgroundImage: `URL(${item.cover_img})` }} className="Content-article-img"></div> : <AppSmallLoading />}
+        {isLoaded ? (
+          <div style={{ backgroundImage: `URL(${item.cover_img})` }} className="Content-article-img"></div>
+        ) : (
+          <AppSmallLoading></AppSmallLoading>
+        )}
       </div>
       {/* 右区域 */}
       <div className="Content-article-right">

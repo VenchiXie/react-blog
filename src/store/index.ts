@@ -4,6 +4,8 @@ import homeSlice from "./slice/homeSlice";
 import introductionSlice from "./slice/introductionSlice";
 import contentSlice from "./slice/contentSlice";
 import projectSlice from "./slice/projectSlice";
+import filingSlice from "./slice/filingSlice";
+
 const store = configureStore({
   reducer: {
     home        : homeSlice,
@@ -11,6 +13,7 @@ const store = configureStore({
     introduction: introductionSlice,
     content     : contentSlice,
     project     : projectSlice,
+    filing      : filingSlice,
   },
 });
 

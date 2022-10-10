@@ -2,7 +2,10 @@
  * 组件 - 标签
  *  */
 interface PropsType {
-  datalist: string[];
+  datalist: {
+    key  : number;
+    title: string;
+  }[];
   onNavigate: (value: string) => void;
 }
 export const ContentTags = (props: PropsType) => {
@@ -10,8 +13,8 @@ export const ContentTags = (props: PropsType) => {
   return (
     <nav className="Content-right-tags">
       {datalist.map((item) => (
-        <span key={item} onClick={() => onNavigate(item)}>
-          {item}
+        <span key={item.key} onClick={() => onNavigate(item.title)}>
+          {item.title}
         </span>
       ))}
     </nav>
